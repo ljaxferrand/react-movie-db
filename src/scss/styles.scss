@@ -1,0 +1,28 @@
+// Main Style Import File
+
+// Fonts
+
+//Poppins
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;1,300;1,400;1,700&display=swap');
+
+// Utilities
+@import './functions';
+@import './variables';
+@import './mixins';
+
+
+// Resets
+@import './reset';
+@import './type';
+
+// Components 
+@import './body';
+@import './wrapper';
+@import './header';
+@import './nav-sort';
+@import './nav-main';
+@import './movies';
+@import './movie-card';
+@import './section';
+@import './single-movie';
+@import './footer';
