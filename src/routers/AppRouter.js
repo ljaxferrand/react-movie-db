@@ -9,6 +9,7 @@ import PageUpcoming from '../pages/PageUpcoming';
 import PageAbout from '../pages/PageAbout';
 import PageFavs from '../pages/PageFavs';
 import PageSingleMovie from '../pages/PageSingleMovie';
+import Page404 from '../pages/Page404';
 
 function AppRouter() {
     return (
@@ -25,6 +26,7 @@ function AppRouter() {
                         <Route path='/about'><PageAbout /></Route>
                         <Route path='/favs'><PageFavs /></Route>
                         <Route path='/movie/:id'><PageSingleMovie /></Route>
+                        <Route path='*'><Page404 /></Route>
                     </Switch>
                 </main>
             <Footer />
