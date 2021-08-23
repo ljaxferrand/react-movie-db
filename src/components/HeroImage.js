@@ -4,8 +4,6 @@ import { API_TOKEN } from '../globals/globals';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-// import AwesomeSlider from 'react-awesome-slider';
-// import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
 
 
 function HeroImage() {
