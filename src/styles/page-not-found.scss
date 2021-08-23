@@ -1,0 +1,26 @@
+.pageNotFound {
+    margin: 50px 75px;
+    padding: 100px;
+    font-weight: 100;
+    font-size: 1rem;
+    text-align: center;
+    border: solid thin #E03D15;
+    border-radius: 10px;
+}
+
+.pageTitle {
+    color: orangered;
+}
+
+.homeButton404 {
+    background-color: #fcfcfc;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    transition: .3s;
+    cursor: pointer;
+    &:hover {
+        background-color: #E03D15;
+        color: #fcfcfc;
+    }
+}
