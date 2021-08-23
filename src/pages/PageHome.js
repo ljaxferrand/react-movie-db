@@ -3,25 +3,7 @@ import { useEffect, useState } from 'react';
 import Movies from '../components/Movies';
 import SortNav from '../components/SortNav';
 import HeroImage from '../components/HeroImage';
-import { API_TOKEN } from '../globals/globals'
-
-function PageHome() {
-
-
-    return (
-        <section className='home-page'>
-            <HeroImage />
-            <SortNav sort='popular' />
-            <SortNav sort='upcoming' />
-            <SortNav sort='top_rated' />
-            <SortNav sort='now_playing' />
-            
-        </section>
-    )
-
-import { useEffect, useState } from "react";
-import Movies from "../components/Movies";
-import { API_TOKEN } from "../globals/globals";
+import { API_TOKEN } from '../globals/globals';
 
 function PageHome({ sort }) {
   const [movieData, setMovieData] = useState(null);
@@ -46,7 +28,20 @@ function PageHome({ sort }) {
     fetchMovies();
   }, [sort]);
 
-  return <div>{movieData !== null && <Movies movieData={movieData} />}</div>;
+  return (
+    <div className="home-page-div">
+      <section className='home-page'>
+        <HeroImage />
+        <SortNav sort='popular' />
+        <SortNav sort='upcoming' />
+        <SortNav sort='top_rated' />
+        <SortNav sort='now_playing' />
+      </section>   
+
+        <div>{movieData !== null && <Movies movieData={movieData} />}</div>;
+      
+    </div>
+  )
 
 }
 
