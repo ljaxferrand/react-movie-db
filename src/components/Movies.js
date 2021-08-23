@@ -1,9 +1,13 @@
-function Movies() {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+import MovieCard from "./MovieCard";
 
-export default Movies
+function Movies({ movieData }) {
+    return (
+      <div className="movies-container">
+        {movieData.map((oneMovie, i) => (
+          <MovieCard key={i} movieObj={oneMovie} />
+        ))}
+      </div>
+    );
+  }
+  
+  export default Movies;
