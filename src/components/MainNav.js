@@ -16,14 +16,17 @@ class Navbar extends React.Component {
     render() {
         return(
             <nav className="NavbarItems">
+                {/* // Logo item linking in header  */}
                 <h1 className="navbar-logo"><Link to="/"><img class="logo" src={logo} alt="Logo" /></Link></h1>
-
+                {/* // Event handling of the hamburger and close buttons */}
                 <div className="menu-icon" onClick={this.handleClick}>
                     <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
                 </div>
+                {/* // Creation of the Navbar items */}
                 <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
                     {MenuItems.map((item, index) => {
                     return (
+                        // see mapped items in MenuItems.js for menu item naming, linking, and classname
                         <li key={index}><a className={item.cName} href={item.url}>
                             {item.title}
                             </a>

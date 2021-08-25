@@ -8,9 +8,10 @@ function Header() {
     return (
         <div>
             <MainNav />
-            <div className="themeToggle">
-                <Switch rounded={true} isToggled={isToggled} onToggle={() => setIsToggled(!isToggled)} />
-            </div>
+            
+                <div className="themeToggle">
+                    <Switch rounded={true} isToggled={isToggled} onToggle={() => setIsToggled(!isToggled)} />
+                </div>
         </div>
     );
 };
