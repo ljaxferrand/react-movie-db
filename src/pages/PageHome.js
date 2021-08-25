@@ -32,12 +32,13 @@ function PageHome({ sort }) {
     <div className="home-page-div">
       <section className='home-page'>
         <HeroImage />
+        
         <SortNav sort='popular' />
         <SortNav sort='upcoming' />
         <SortNav sort='top_rated' />
         <SortNav sort='now_playing' />
       </section>   
-
+      
         <div>{movieData !== null && <Movies movieData={movieData} />}</div>;
       
     </div>
