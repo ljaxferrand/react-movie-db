@@ -39,7 +39,7 @@ function PageHome({ sort }) {
         <SortNav sort='now_playing' />
       </section>   
       
-        <div>{movieData !== null && <Movies movieData={movieData} />}</div>;
+        <div>{movieData !== null && <Movies movieData={movieData} />}</div>
       
     </div>
   )
