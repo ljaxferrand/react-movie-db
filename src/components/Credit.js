@@ -7,7 +7,7 @@ function credit() {
     return (
         <div className="about-page-title">
             <div className="about-banner-container">
-                <img class="about-us-banner-image" src={movieBanner} alt="About us banner image" />
+                <img class="about-us-banner-image" src={movieBanner} alt="About us banner" />
                 <h1 className="about-title">About Us</h1>
                 <figure className="quote">
                     <blockquote >
