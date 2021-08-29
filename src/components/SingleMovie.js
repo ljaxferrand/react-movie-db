@@ -14,18 +14,31 @@ function SingleMovie( {movieData} ) {
                 <img src={`https://image.tmdb.org/t/p/original/${movieData.poster_path}`} alt={movieData.title} />}
                 </div>
 
-                <div className="SingleMovieInfo">
-                    <h2>{movieData.title}</h2>
-                    <p>{movieData.overview}</p>
-                    <p>Release Date: {movieData.release_date}</p>
+                <div className="singleMovieInfo">
+                    <h2 className="movieTitle">{movieData.title}</h2>
+                    
                     <span className="rating">
                         {movieData.vote_average > 5 ? (
                         <img className="thumbs" src={thumbsUp} alt=""></img>
                         ) : (
                         <img className="thumbs" src={thumbsDown} alt="" />
                         )}
-                        {movieData.vote_average * 10 + "%"}
-          </span>
+                        <p className="ratingPercent">{movieData.vote_average * 10 + "%"}</p>
+                    </span>
+                    <h3>Synopsis</h3>
+                    <p className="movieDes">{movieData.overview}</p>
+
+                    <div className="underDes">
+                        <div className="releaseDate">
+                            <p className="releaseDateTitle">Release Date</p>
+                            <p className="date">{movieData.release_date}</p>
+                        </div>
+                        <div className="runtime">
+                            <p className="runtimeTitle">Runtime</p>
+                            <p className="time">{movieData.runtime} Mins.</p>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
 

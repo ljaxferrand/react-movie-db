@@ -1,0 +1,95 @@
+.singleMovie {
+    font-family: 'Poppins', sans-serif;
+
+    .singleMovieContent {
+
+        .singleMoviePoster {
+            margin: 1rem auto;
+
+            img {
+                display: block;
+                width: 80%;
+                margin: 0 auto;
+                border-radius: 15px;
+
+            }
+        }
+
+        .singleMovieInfo {
+
+
+            .movieTitle {
+                text-align: center;
+                margin: 1rem 0 auto;
+                font-size: 1.8em;
+            }
+
+
+            .rating {
+                display: flex;
+                justify-content: center;
+                margin: 1rem 0;
+                img {
+                    width: 50px;
+                }
+
+                .ratingPercent{
+                    margin-left: 10px;
+                    font-size: 1.7em;
+                }
+            }
+
+            h3 {
+                font-size: 1.4em;
+                font-weight: 500;
+                text-align: center;
+                text-decoration: underline 3px solid $accentcolor;
+                text-underline-offset: 7px;
+            }
+
+            .movieDes {
+                width: 90vw;
+                margin: 0 auto;
+                font-size: 1.1em;
+                margin-bottom: 1rem;
+            }
+
+            .underDes {
+                width: 90vw;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                
+                .releaseDate {
+
+                    .releaseDateTitle {
+                        font-size: 1.4em;
+                        text-align: center;
+                        text-decoration: underline 3px solid $accentcolor;
+                        text-underline-offset: 5px;
+                    }
+    
+                    .date {
+                        text-align: center;
+                        font-size: 1.3em;
+                    }
+                }
+    
+                .runtime {
+    
+                    .runtimeTitle {
+                        font-size: 1.4em;
+                        text-align: center;
+                        text-decoration: underline 3px solid $accentcolor;
+                        text-underline-offset: 5px;
+                    }
+    
+                    .time {
+                        text-align: center;
+                        font-size: 1.3em;
+                    }
+                }
+            }
+        }
+    }
+}
