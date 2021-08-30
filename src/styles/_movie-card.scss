@@ -1,16 +1,23 @@
-// For grid setup --
-.movies-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr; 
-  grid-gap: 2rem;
+.slider-container {
+  @include flex-column;
   position: absolute;
-  top: 37.5rem;
-  left: 0;
-  right: 0;
+  top: 36rem;
+  left: 2rem;
+  right: 2rem;
 }
 
-.movie-poster {
+// For grid setup --
+// .movies-container {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr 1fr;
+//   grid-gap: 2rem;
+//   position: absolute;
+//   top: 42rem;
+//   left: 0;
+//   right: 0;
+// }
 
+.movie-poster {
   img {
     border-radius: 15px;
   }
@@ -18,6 +25,7 @@
 
 .card-container {
   position: relative;
+  padding: 0 0 4rem 0;
 }
 
 .movie-card {
@@ -27,7 +35,8 @@
   max-width: 400px;
   margin: auto;
   border-radius: 15px;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
   // div {
   //   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
   // }
@@ -87,4 +96,3 @@
     }
   }
 }
-
