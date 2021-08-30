@@ -11,3 +11,9 @@
     text-align: center;
     justify-content: center;
 }
+
+@mixin mq($w) {
+    @media (min-width: $w){
+        @content;
+    }
+}
