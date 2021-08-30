@@ -32,7 +32,6 @@ function PageHome({ sort }) {
     <div className="home-page-div">
       <section className="home-page">
         <HeroImage />
-
       </section>
       <div className="slider-container">
         <h2>Popular</h2>
@@ -53,17 +52,6 @@ function PageHome({ sort }) {
         <div>{movieData !== null && <Movies movieData={movieData} />}</div>
       </div>
       ;
-
-        
-        <SortNav sort='popular' />
-        <SortNav sort='upcoming' />
-        <SortNav sort='top_rated' />
-        <SortNav sort='now_playing' />
-      </section>   
-      
-        <div>{movieData !== null && <Movies movieData={movieData} />}</div>
-      
-
     </div>
   );
 }
