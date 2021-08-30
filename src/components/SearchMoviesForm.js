@@ -14,8 +14,6 @@ export default function SearchMoviesForm(){
         e.preventDefault();
         // console.log("submitting");
 
-       
-
         const url = `https://api.themoviedb.org/3/search/movie?api_key=b719fcd73bdca87defac06b5f5c92133&language=en-US&query=${query}&page=1`;
 
         try {
@@ -31,12 +29,15 @@ export default function SearchMoviesForm(){
 
     return (
         <>
+        <fieldset className='search-box-container'>
             <form className="form" onSubmit={searchMovies}>
                 <label className="label" htmlFor="query"></label>
                 <input className="input" type="text" name="query" placeholder="Type a name to search..."
                 value={query} onChange={(e) => setQuery(e.target.value)}/>
                 <button className="button">Search</button>
             </form>
+        </fieldset>
+
             <div className="card-list">
                 {/* filters out movies without images */}
                 {movies.filter(movie => movie.poster_path).map(movie => ( 
@@ -54,6 +55,7 @@ export default function SearchMoviesForm(){
                     </div>
                 ))}
             </div>
+            
         </>
     )
 }
