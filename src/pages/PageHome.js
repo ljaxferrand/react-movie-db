@@ -1,9 +1,8 @@
-
-import { useEffect, useState } from 'react';
-import Movies from '../components/Movies';
-import SortNav from '../components/SortNav';
-import HeroImage from '../components/HeroImage';
-import { API_TOKEN } from '../globals/globals';
+import { useEffect, useState } from "react";
+import Movies from "../components/Movies";
+// import SortNav from '../components/SortNav';
+import HeroImage from "../components/HeroImage";
+import { API_TOKEN } from "../globals/globals";
 
 function PageHome({ sort }) {
   const [movieData, setMovieData] = useState(null);
@@ -22,6 +21,7 @@ function PageHome({ sort }) {
       );
       let rawMovieData = await res.json();
       rawMovieData = rawMovieData.results.splice(0, 12);
+
       setMovieData(rawMovieData);
     };
 
@@ -30,20 +30,30 @@ function PageHome({ sort }) {
 
   return (
     <div className="home-page-div">
-      <section className='home-page'>
+      <section className="home-page">
         <HeroImage />
-        
-        <SortNav sort='popular' />
-        <SortNav sort='upcoming' />
-        <SortNav sort='top_rated' />
-        <SortNav sort='now_playing' />
-      </section>   
-      
-        <div>{movieData !== null && <Movies movieData={movieData} />}</div>;
-      
+      </section>
+      <div className="slider-container">
+        <h2>Popular</h2>
+        <div>
+          {movieData !== null && (
+            <Movies {...(sort = "popular")} movieData={movieData} />
+          )}
+        </div>
+        <h2>Top Rated</h2>
+        <div>
+          {movieData !== null && (
+            <Movies {...(sort = "top_rated")} movieData={movieData} />
+          )}
+        </div>
+        <h2>Now Playing</h2>
+        <div>{movieData !== null && <Movies movieData={movieData} />}</div>
+        <h2>Upcoming</h2>
+        <div>{movieData !== null && <Movies movieData={movieData} />}</div>
+      </div>
+      ;
     </div>
-  )
-
+  );
 }
 
 export default PageHome;
