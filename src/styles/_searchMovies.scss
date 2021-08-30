@@ -11,11 +11,19 @@
     text-align: center;
     margin-top: 50px;
     margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.search-box-container {
+    padding: 25px;
+    background-color: #B5D2E3;
+    border-radius: 5px;
+    border-color: rgba(255, 68, 0, 0.584);
+    border: none;
 }
 
 .form {
     display: grid;
-   
 }
 
 .label {
@@ -49,15 +57,17 @@
 }
 
 .button {
-    background-color: rgba(0, 0, 0, 0.488);
+    background-color: #e03e15;
     color: white;
+    letter-spacing: 0.2rem;
     border-radius: 5px;
-    padding: 1rem 2rem;
+    padding: 1rem 1.25rem;
     border: none;
     cursor: pointer;
     transition: .5s ease-in-out;
     &:hover {
-        background-color: orangered; 
+        background-color: #293241; 
+        color: orangered;
     }
 }
 
