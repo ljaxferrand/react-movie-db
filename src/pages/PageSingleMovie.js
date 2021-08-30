@@ -6,6 +6,7 @@ import { API_TOKEN } from '../globals/globals';
 function PageSingleMovie() {
 
     const [movieData, setMovieData] = useState(null);
+    const [creditsData, setCreditsData] = useState(null);
 
     const { id } = useParams();
 
@@ -13,7 +14,7 @@ function PageSingleMovie() {
 
         const fetchMovie = async () => {
 
-            const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US`, {
+            const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US&append_to_response=credits`, {
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
@@ -21,15 +22,19 @@ function PageSingleMovie() {
                 }
             });
             let rawMovieData = await res.json();
+            let rawCreditsData = rawMovieData.credits.cast.splice(0, 6);
             setMovieData(rawMovieData);
+            setCreditsData(rawCreditsData);
         }
 
         fetchMovie();
     }, []);
 
+
+
     return (
         <section>
-            {movieData !== null && <SingleMovie movieData={movieData} />}
+            {movieData !== null && <SingleMovie movieData={movieData} creditsData={creditsData} />}
         </section>
     )
 }
