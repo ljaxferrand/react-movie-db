@@ -1,14 +1,20 @@
+import React from 'react';
+import * as AiIcons from 'react-icons/ai';
+import * as IoIcons from 'react-icons/io';
+import * as FaIcons from 'react-icons/fa';
+import * as FcIcons from 'react-icons/fc';
+import { IoMdPeople } from 'react-icons/io';
 
 
 export const MenuItems = [
     {
-        title: 'ABOUT',
+        title: [' ABOUT'],
         url: '/about',
         cName: 'nav-links'
     },
     {
-        title: 'SEARCH',
-        url: '#',
+        title: [<IoIcons.IoMdSearch size="20px" />, ' SEARCH'],
+        url: '/search',
         cName: 'nav-links'
     },
     {
