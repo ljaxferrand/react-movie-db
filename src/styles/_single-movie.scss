@@ -256,13 +256,11 @@
 
                         @include mq($desktopWideBP){
                             width: 95vw;
-                            margin: 0 auto;
+                            margin: 0 2rem;
                             grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
                         }
 
                         .castMember {
-
-
 
                             img {
                                 display: block;
@@ -280,7 +278,7 @@
                                 }
 
                                 @include mq($desktopWideBP){
-                                    width: 80%;
+                                    width: 75%;
                                 }
                             }
 
@@ -295,6 +293,11 @@
                                 @include mq($tabletBP){
                                     max-width: 80%;
                                     font-size: 1.4em;   
+                                }
+
+                                @include mq($desktopWideBP){
+                                    font-size: 1em;
+                                    max-width: 80%;
                                 }
                             }
                         }
