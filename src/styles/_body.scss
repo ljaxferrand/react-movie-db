@@ -1,7 +1,9 @@
 // Body Styles
 
 body {
-    background-color: #293241;
-    color: $primarytxtcolor;
+
+    background-color: var(--backgroundprimary);
+    color: var(--primarytxtcolor);
+
     padding: $bodyPadding;
 }

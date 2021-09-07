@@ -1,9 +1,11 @@
 .slider-container {
   @include flex-column;
   position: absolute;
+
   top: 44rem;
   left: 2rem;
   right: 2rem;
+
 }
 
 // For grid setup --
@@ -58,6 +60,7 @@
 .movie-card:hover {
   .movie-info {
     @include flex-column;
+    
     justify-content: flex-start;
 
     h3 {
