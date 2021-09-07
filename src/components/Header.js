@@ -1,17 +1,21 @@
-import React, { useState } from 'react';
+
 import MainNav from './MainNav';
-import Switch from './Switch'; 
+
+import Toggle from './Toggle';
 
 function Header() {
-    const [isToggled, setIsToggled] = useState(false);
+    
 
     return (
         <div>
             <MainNav />
             
+
                 <div className="themeToggle">
-                    <Switch rounded={true} isToggled={isToggled} onToggle={() => setIsToggled(!isToggled)} />
+                <Toggle />
                 </div>
+                
+
         </div>
     );
 };

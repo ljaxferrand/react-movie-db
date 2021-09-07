@@ -1,4 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { useEffect } from 'react';
+import { keepTheme  } from '../utilities/themes';
 import Header from '../components/Header';
 import Footer from "../components/Footer";
 import PageHome from '../pages/PageHome';
@@ -14,6 +16,10 @@ import Page404 from '../pages/Page404';
 import PageSearch from '../pages/PageSearch';
 
 function AppRouter() {
+    useEffect(() => {
+        keepTheme();
+    })
+
     return (
         <Router>
         <div className='wrapper'>
@@ -32,8 +38,10 @@ function AppRouter() {
                         <Route path='*'><Page404 /></Route>
                     </Switch>
                 </main>
-            <Footer />
         </div>
+        <footer>
+            <Footer />  
+        </footer>
         </Router>
     )
 }

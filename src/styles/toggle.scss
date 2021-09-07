@@ -1,0 +1,122 @@
+:root {
+    /** sunny side **/
+    --blue-background: #3d5a80;
+    --blue-border: #3d5a80;
+    --blue-color: #B5D2E3;
+    --white-background: #f5f5f5;
+    --white-border: #f5f5f5;
+    /** dark side **/
+   
+    --red-border: #E03D15;
+    
+
+    // theme styls
+    --backgroundprimary: #293241;
+    --backgroundsecondary: #3d5a80;
+    --primarytxtcolor: #f5f5f5;
+    --accentcolor: #E03D15;
+    --lightblue: #B5D2E3;
+}
+
+.toggle-container {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 3.5rem 1rem 0;
+    z-index: 200;
+    right: 0;
+    
+}
+
+@keyframes reverse {
+    0% {
+        left: 47px;
+        width: 40px;
+    }
+    60% {
+        left: 3px;
+        width: 80px;
+    }
+    100% {
+        left: 3px;
+    }
+}
+    
+@keyframes switch {
+    0% {
+        left: 3px;
+    }
+    60% {
+        left: 3px;
+        width: 80px;
+    }
+    100% {
+        left: 47px;
+        width: 40px;
+    }
+}
+
+.toggle--checkbox {
+    display: none;
+}
+  
+.container--toggle {
+    display: grid;
+    place-items: center;
+    min-height: 60px;
+    position: relative;
+    grid-area: toggle;
+    margin: 20px;
+}
+
+/* background */
+.toggle--label {
+    width: 100px;
+    height: 40px;
+    background: var(--blue-background);
+    border-radius: 100px;
+    border: 3px solid var(--blue-background);
+    display: flex;
+    position: relative;
+    transition: all 350ms ease-in;
+    margin-bottom: 2rem;
+}
+
+.toggle--checkbox:checked + .toggle--label {
+    background: var(--blue-background);
+    border-color: var(--blue-background);
+}
+
+/*  button */
+.toggle--checkbox:checked + .toggle--label:before {
+    animation-name: reverse;
+    animation-duration: 350ms;
+    animation-fill-mode: forwards;
+    transition: all 360ms ease-in;
+    background: var(--white-background);
+    border-color: var(--white-border);
+}
+
+.toggle--label:before {
+    animation-name: switch;
+    animation-duration: 350ms;
+    animation-fill-mode: forwards;
+    content: '';
+    width: 40px;
+    height: 30px;
+    border: 3px solid var(--red-border);
+    top: 2px;
+    left: 3px;
+    position: absolute;
+    border-radius: 40px;
+    background: #E03D15;
+}
+
+
+.toggle--checkbox:checked + .toggle--label:after {
+    transition-delay: 50ms;
+    opacity: 0;
+}
+
+
+
+

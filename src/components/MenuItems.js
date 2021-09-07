@@ -18,8 +18,8 @@ export const MenuItems = [
         cName: 'nav-links'
     },
     {
-        title: 'LOG IN',
-        url: '#',
+        title: 'FAVOURITES',
+        url: '/favs',
         cName: 'nav-links'
     },
     // {

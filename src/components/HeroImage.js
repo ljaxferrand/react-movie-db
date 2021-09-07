@@ -63,10 +63,13 @@ function HeroImage() {
                     <div>
                         <img src={`https://image.tmdb.org/t/p/original/${movieData[4].backdrop_path}`} alt={`Poster for ${movieData[4].title}`} />
                     </div>
+                    
                     </Slider>
                     
                     <div className="hero-overlay">
+                    <div className="banner--fadeBottom" />    
                     </div>
+                    
                 </div>
             }
         </div>

@@ -33,6 +33,7 @@
 .sliders-container {
   @include flex-column;
   position: absolute;
+
   top: 78vh;
   left: 3rem;
   right: 3rem;
@@ -53,6 +54,7 @@
   h2 {
     padding-top: 2.5rem;
   }
+
 }
 
 .category-container {
@@ -135,6 +137,7 @@
 .movie-card:hover {
   .movie-info {
     @include flex-column;
+    
     justify-content: flex-start;
 
     h3 {
