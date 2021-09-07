@@ -1,8 +1,8 @@
 // Body Styles
 
 body {
-    background-color: $backgroundprimary;
-    color: $primarytxtcolor;
+    background-color: var(--backgroundprimary);
+    color: var(--primarytxtcolor);
     padding: $bodyPadding;
 
 }
