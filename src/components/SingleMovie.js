@@ -32,7 +32,6 @@ function SingleMovie( {movieData, creditsData} ) {
 
                         <h3>Synopsis</h3>
                         <p className="movieDes">{movieData.overview}</p>
-
                         <div className="underDes">
                             <div className="releaseDate">
                                 <p className="releaseDateTitle">Release Date</p>

@@ -51,7 +51,6 @@ function PageHome({ sort }) {
         <h2>Upcoming</h2>
         <div>{movieData !== null && <Movies movieData={movieData} />}</div>
       </div>
-      ;
     </div>
   );
 }
