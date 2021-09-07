@@ -46,30 +46,34 @@ function MovieCard({ movieObj, isFav }) {
         </div>
 
         <div className="movie-info">
-          <div className="btn-favourite">
-            {isFav ? (
-              <FavButton
-                movieObj={movieObj}
-                remove={true}
-                handleFavClick={handleFavClick}
-              />
-            ) : (
-              <FavButton movieObj={movieObj} handleFavClick={handleFavClick} />
-            )}
+          <div className="card-header">
+            <span className="rating">
+              {movieObj.vote_average > 5 ? (
+                <img className="thumbs" src={thumbsUp} alt=""></img>
+              ) : (
+                <img className="thumbs" src={thumbsDown} alt="" />
+              )}
+              {movieObj.vote_average * 10 + "%"}
+            </span>
+            <div className="btn-favourite">
+              {isFav ? (
+                <FavButton
+                  movieObj={movieObj}
+                  remove={true}
+                  handleFavClick={handleFavClick}
+                />
+              ) : (
+                <FavButton
+                  movieObj={movieObj}
+                  handleFavClick={handleFavClick}
+                />
+              )}
+            </div>
           </div>
           <h3 className="movie-title">{movieObj.title}</h3>
-          <p>Release date: {movieObj.release_date}</p>
+          <h4>Release: {movieObj.release_date}</h4>
 
-          <span className="rating">
-            {movieObj.vote_average > 5 ? (
-              <img className="thumbs" src={thumbsUp} alt=""></img>
-            ) : (
-              <img className="thumbs" src={thumbsDown} alt="" />
-            )}
-            {movieObj.vote_average * 10 + "%"}
-          </span>
-
-          <p>{truncateSummary(movieSummary, 12, "...")}</p>
+          <p>{truncateSummary(movieSummary, 16, "...")}</p>
           <Link className="btn-more-info" to={`/movie/${movieObj.id}`}>
             More Info
           </Link>

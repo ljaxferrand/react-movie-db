@@ -2,19 +2,21 @@ import { useEffect, useState } from "react";
 import SliderMovies from "./SliderMovies";
 import { API_TOKEN } from "../globals/globals";
 
-function Slider4Upcoming() {
+function Slider4Upcoming({ sort }) {
   const [movieData, setMovieData] = useState(null);
 
   useEffect(() => {
+    let controller = new AbortController();
     const fetchMovies = async () => {
       const res = await fetch(
-        `https://api.themoviedb.org/3/movie/upcoming?&language=en-US&page=1`,
+        `https://api.themoviedb.org/3/movie/${sort}?&language=en-US&page=1`,
         {
           headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
             Authorization: "Bearer " + API_TOKEN,
           },
+          signal: controller.signal,
         }
       );
       let rawMovieData = await res.json();
@@ -24,10 +26,14 @@ function Slider4Upcoming() {
     };
 
     fetchMovies();
+
+    return () => controller?.abort();
   });
 
   return (
-    <div>{movieData !== null && <SliderMovies movieData={movieData} />}</div>
+    <div>
+      {movieData !== null && <SliderMovies sort={sort} movieData={movieData} />}
+    </div>
   );
 }
 

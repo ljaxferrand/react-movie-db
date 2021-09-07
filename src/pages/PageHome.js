@@ -16,22 +16,22 @@ function PageHome() {
         <Link to="popular">
           <h2>Popular</h2>
         </Link>
-        <Slider1Popular />
+        <Slider1Popular sort="popular" />
 
         <Link to="top-rated">
           <h2>Top Rated</h2>
         </Link>
-        <Slider3TopRated />
+        <Slider3TopRated sort="top_rated" />
 
         <Link to="now-playing">
           <h2>Now Playing</h2>
         </Link>
-        <Slider2NowPlaying />
+        <Slider2NowPlaying sort="now_playing" />
 
         <Link to="upcoming">
           <h2>Upcoming</h2>
         </Link>
-        <Slider4Upcoming />
+        <Slider4Upcoming sort="upcoming" />
       </div>
     </div>
   );
