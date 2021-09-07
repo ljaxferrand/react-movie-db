@@ -1,5 +1,5 @@
 import React from 'react';
-import "../styles/switch.scss"; 
+import "../styles/_switch.scss"; 
 import cx from "classnames";
 
 const Switch = ({ rounded = false, isToggled, onToggle }) => {

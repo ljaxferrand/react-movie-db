@@ -13,7 +13,7 @@ import PageFavs from '../pages/PageFavs';
 import PageSingleMovie from '../pages/PageSingleMovie';
 import HeroImage from '../components/HeroImage';
 import Page404 from '../pages/Page404';
-
+import PageSearch from '../pages/PageSearch';
 
 function AppRouter() {
     useEffect(() => {
@@ -34,11 +34,14 @@ function AppRouter() {
                         <Route path='/about'><PageAbout /></Route>
                         <Route path='/favs'><PageFavs /></Route>
                         <Route path='/movie/:id'><PageSingleMovie /></Route>
+                        <Route path='/search'><PageSearch /></Route>
                         <Route path='*'><Page404 /></Route>
                     </Switch>
                 </main>
-            <Footer />
         </div>
+        <footer>
+            <Footer />  
+        </footer>
         </Router>
     )
 }

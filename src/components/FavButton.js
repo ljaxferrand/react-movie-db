@@ -19,10 +19,6 @@ function FavButton({ movieObj, remove, handleFavClick, path }) {
             }
     }
 
-    
-
-    
-
     return (
         <>
             {remove === false ? 

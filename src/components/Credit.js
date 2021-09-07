@@ -7,7 +7,7 @@ function credit() {
     return (
         <div className="about-page-title">
             <div className="about-banner-container">
-                <img class="about-us-banner-image" src={movieBanner} alt="About us banner image" />
+                <img class="about-us-banner-image" src={movieBanner} alt="About us banner" />
                 <h1 className="about-title">About Us</h1>
                 <figure className="quote">
                     <blockquote >
@@ -17,11 +17,10 @@ function credit() {
                 </figure>
             </div>
             
-            
             <div className="credit-logos-container">
                 <div className="item1">
                     <p className="about-text">
-                    "This product uses the TMDb API but is not endorsed or certified by TMDb."</p>
+                    This product uses the TMDb API but is not endorsed or certified by TMDb.</p>
                 </div>
                 <div className="item2">
                     <a href="https://www.themoviedb.org/"><img class="imdb-logo" src={imdblogo} alt="Logo for IMDB" /></a>

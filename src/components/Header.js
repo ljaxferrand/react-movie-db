@@ -10,10 +10,12 @@ function Header() {
         <div>
             <MainNav />
             
+
                 <div className="themeToggle">
                 <Toggle />
                 </div>
                 
+
         </div>
     );
 };
