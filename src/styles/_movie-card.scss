@@ -1,33 +1,104 @@
-.slider-container {
+// For grid setup --
+.slick-slide {
+  height: auto;
+}
+.slick-track {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.slick-prev:before {
+  content: "\1438
+  ";
+  color: $accentcolor;
+  font-size: 30px;
+  position: absolute;
+  top: -50%;
+  left: 0.1rem;
+}
+
+.slick-next:before {
+  content: "\1433
+  ";
+  color: $accentcolor;
+  font-size: 30px;
+  position: absolute;
+  top: -50%;
+  right: 0.1rem;
+}
+
+.sliders-container {
   @include flex-column;
   position: absolute;
 
-  top: 44rem;
-  left: 2rem;
-  right: 2rem;
+  top: 78vh;
+  left: 3rem;
+  right: 3rem;
+
+  a {
+    color: $primarytxtcolor;
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: $primarytxtcolor;
+  }
+
+  a:hover {
+    color: $accentcolor;
+  }
+
+  h2 {
+    padding-top: 2.5rem;
+  }
 
 }
 
-// For grid setup --
-// .movies-container {
-//   display: grid;
-//   grid-template-columns: 1fr 1fr 1fr 1fr;
-//   grid-gap: 2rem;
-//   position: absolute;
-//   top: 42rem;
-//   left: 0;
-//   right: 0;
-// }
-
-.movie-poster {
-  img {
-    border-radius: 15px;
+.category-container {
+  h2 {
+    text-align: center;
+    padding-bottom: 2rem;
   }
 }
 
+.movies-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+
+  @include mq(700px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include mq(1015px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @include mq(1500px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  @include mq(1920px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+.movie-poster {
+  img {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  width: 100%;
+  height: 100%;
+}
+
 .card-container {
-  position: relative;
-  padding: 0 0 4rem 0;
+  padding-bottom: 1rem;
 }
 
 .movie-card {
@@ -35,13 +106,10 @@
   position: relative;
   width: 90%;
   max-width: 400px;
+  height: 98.5%;
   margin: auto;
-  border-radius: 15px;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
-    rgba(0, 0, 0, 0.22) 0px 15px 12px;
-  // div {
-  //   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-  // }
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.5) 6px 10px 12px;
 }
 
 .movie-info {
@@ -50,11 +118,20 @@
   right: 0;
   left: 0;
   margin: auto;
-  background-color: rgba($backgroundsecondary, 0.9);
+  background-color: rgba($backgroundsecondary, 0.97);
   padding: 1.5rem;
-  height: 100%;
-  border-radius: 15px;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  height: 101.5%;
+  border-radius: 10px;
+
+  @media (max-width: 400px) {
+    padding: 0.75rem;
+  }
+}
+
+.card-header {
+  @include flex-row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .movie-card:hover {
@@ -64,22 +141,47 @@
     justify-content: flex-start;
 
     h3 {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
+      font-weight: 300;
       text-transform: uppercase;
+
+      @media (max-width: 400px) {
+        font-size: 1rem;
+      }
+    }
+
+    h4 {
+      font-weight: 200;
+      margin: 0 0 0.5rem 0;
     }
 
     p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       text-align: left;
+      margin: 0;
+      overflow: hidden;
+
+      @media (max-width: 400px) {
+        font-size: 1rem;
+      }
     }
 
     span {
-      font-weight: 600;
-      font-size: 1.5rem;
+      font-weight: 400;
+      font-size: 2rem;
+
+      @media (max-width: 400px) {
+        font-size: 1rem;
+      }
     }
 
     .thumbs {
       width: 3rem;
+      padding-right: 0.5rem;
+
+      @media (max-width: 400px) {
+        font-size: 1rem;
+      }
     }
 
     .rating {
@@ -89,13 +191,20 @@
     }
 
     .btn-more-info {
+      position: absolute;
+      bottom: 0.75rem;
       background-color: $accentcolor;
-      width: 50%;
+      max-width: 50%;
       align-self: center;
-      padding: 1rem 2rem;
-      border-radius: 2rem;
+      padding: 0.5rem 1rem;
+      border-radius: 1rem;
       text-decoration: none;
       color: $primarytxtcolor;
+
+      @media (max-width: 400px) {
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.5rem;
+      }
     }
   }
 }
