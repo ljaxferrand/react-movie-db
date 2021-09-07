@@ -1,4 +1,5 @@
 import noPoster from "../images/no-movie-poster.jpg";
+import noCastPhoto from "../images/no-cast-photo.png";
 import thumbsUp from "../images/thumbs-up.svg";
 import thumbsDown from "../images/thumbs-down.svg";
 
@@ -51,35 +52,59 @@ function SingleMovie( {movieData, creditsData} ) {
 
                                 <div className="castArea">
 
+                                    {creditsData[0] !== null && (
                                     <div className="castMember">
-                                        <img src={`https://image.tmdb.org/t/p/original/${creditsData[0].profile_path}`} alt={creditsData[0].name} />
+                                        {creditsData[0].profile_path !== null ? <img src={`https://image.tmdb.org/t/p/original/${creditsData[0].profile_path}`} alt={creditsData[0].name} /> :
+                                        <img src={noCastPhoto} alt="cast profile unavailable" /> }
+
                                         <p>{creditsData[0].name} as {creditsData[0].character}</p>
                                     </div>
+                                    )}
 
+                                    {creditsData[1] !== null && (
                                     <div className="castMember">
-                                        <img src={`https://image.tmdb.org/t/p/original/${creditsData[1].profile_path}`} alt={creditsData[1].name} />
+                                        {creditsData[1].profile_path !== null ? <img src={`https://image.tmdb.org/t/p/original/${creditsData[1].profile_path}`} alt={creditsData[1].name} /> :
+                                        <img src={noCastPhoto} alt="cast profile unavailable" /> }
+
                                         <p>{creditsData[1].name} as {creditsData[1].character}</p>
                                     </div>
+                                    )}
 
+                                    {creditsData[2] !== null && (
                                     <div className="castMember">
-                                        <img src={`https://image.tmdb.org/t/p/original/${creditsData[2].profile_path}`} alt={creditsData[2].name} />
+                                        {creditsData[2].profile_path !== null ? <img src={`https://image.tmdb.org/t/p/original/${creditsData[2].profile_path}`} alt={creditsData[2].name} /> :
+                                        <img src={noCastPhoto} alt="cast profile unavailable" /> }
+
                                         <p>{creditsData[2].name} as {creditsData[2].character}</p>
                                     </div>
+                                    )}
 
+                                    {creditsData[3] !== null && (
                                     <div className="castMember">
-                                        <img src={`https://image.tmdb.org/t/p/original/${creditsData[3].profile_path}`} alt={creditsData[3].name} />
+                                        {creditsData[3].profile_path !== null ? <img src={`https://image.tmdb.org/t/p/original/${creditsData[3].profile_path}`} alt={creditsData[3].name} /> :
+                                        <img src={noCastPhoto} alt="cast profile unavailable" /> }
+
                                         <p>{creditsData[3].name} as {creditsData[3].character}</p>
                                     </div>
+                                    )}
 
+                                    {creditsData[4] !== null && (
                                     <div className="castMember">
-                                        <img src={`https://image.tmdb.org/t/p/original/${creditsData[4].profile_path}`} alt={creditsData[4].name} />
+                                        {creditsData[4].profile_path !== null ? <img src={`https://image.tmdb.org/t/p/original/${creditsData[4].profile_path}`} alt={creditsData[4].name} /> :
+                                        <img src={noCastPhoto} alt="cast profile unavailable" /> }
+
                                         <p>{creditsData[4].name} as {creditsData[4].character}</p>
                                     </div>
+                                    )}
 
+                                    {creditsData[5] !== null && (
                                     <div className="castMember">
-                                        <img src={`https://image.tmdb.org/t/p/original/${creditsData[5].profile_path}`} alt={creditsData[5].name} />
+                                        {creditsData[5].profile_path !== null ? <img src={`https://image.tmdb.org/t/p/original/${creditsData[5].profile_path}`} alt={creditsData[5].name} /> :
+                                        <img src={noCastPhoto} alt="cast profile unavailable" /> }
+
                                         <p>{creditsData[5].name} as {creditsData[5].character}</p>
                                     </div>
+                                    )}
 
                                 </div>
                             </div>
