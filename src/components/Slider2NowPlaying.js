@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
-
-import Movies from "../components/Movies";
+import SliderMovies from "./SliderMovies";
 import { API_TOKEN } from "../globals/globals";
 
-function PagePopular({ sort }) {
+function Slider2NowPlaying() {
   const [movieData, setMovieData] = useState(null);
 
   useEffect(() => {
     const fetchMovies = async () => {
       const res = await fetch(
-        `https://api.themoviedb.org/3/movie/${sort}?&language=en-US&page=1`,
+        `https://api.themoviedb.org/3/movie/now_playing?&language=en-US&page=1`,
         {
           headers: {
             Accept: "application/json",
@@ -19,23 +18,17 @@ function PagePopular({ sort }) {
         }
       );
       let rawMovieData = await res.json();
-      rawMovieData = rawMovieData.results.splice(0, 20);
+      rawMovieData = rawMovieData.results.splice(0, 12);
 
       setMovieData(rawMovieData);
     };
 
     fetchMovies();
-  }, [sort]);
+  });
 
   return (
-    <div className="category-container">
-      <h2>Popular</h2>
-
-      <div className="movies-container">
-        {movieData !== null && <Movies movieData={movieData} />}
-      </div>
-    </div>
+    <div>{movieData !== null && <SliderMovies movieData={movieData} />}</div>
   );
 }
 
-export default PagePopular;
+export default Slider2NowPlaying;

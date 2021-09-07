@@ -1,57 +1,38 @@
-import { useEffect, useState } from "react";
-import Movies from "../components/Movies";
-// import SortNav from '../components/SortNav';
 import HeroImage from "../components/HeroImage";
-import { API_TOKEN } from "../globals/globals";
+import { Link } from "react-router-dom";
+import Slider1Popular from "../components/Slider1Popular";
+import Slider2NowPlaying from "../components/Slider2NowPlaying";
+import Slider3TopRated from "../components/Slider3TopRated";
+import Slider4Upcoming from "../components/Slider4Upcoming";
 
-function PageHome({ sort }) {
-  const [movieData, setMovieData] = useState(null);
-
-  useEffect(() => {
-    const fetchMovies = async () => {
-      const res = await fetch(
-        `https://api.themoviedb.org/3/movie/${sort}?&language=en-US&page=1`,
-        {
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-            Authorization: "Bearer " + API_TOKEN,
-          },
-        }
-      );
-      let rawMovieData = await res.json();
-      rawMovieData = rawMovieData.results.splice(0, 12);
-
-      setMovieData(rawMovieData);
-    };
-
-    fetchMovies();
-  }, [sort]);
-
+function PageHome() {
   return (
     <div className="home-page-div">
       <section className="home-page">
         <HeroImage />
       </section>
-      <div className="slider-container">
-        <h2>Popular</h2>
-        <div>
-          {movieData !== null && (
-            <Movies {...(sort = "popular")} movieData={movieData} />
-          )}
-        </div>
-        <h2>Top Rated</h2>
-        <div>
-          {movieData !== null && (
-            <Movies {...(sort = "top_rated")} movieData={movieData} />
-          )}
-        </div>
-        <h2>Now Playing</h2>
-        <div>{movieData !== null && <Movies movieData={movieData} />}</div>
-        <h2>Upcoming</h2>
-        <div>{movieData !== null && <Movies movieData={movieData} />}</div>
+
+      <div className="sliders-container">
+        <Link to="popular">
+          <h2>Popular</h2>
+        </Link>
+        <Slider1Popular />
+
+        <Link to="top-rated">
+          <h2>Top Rated</h2>
+        </Link>
+        <Slider3TopRated />
+
+        <Link to="now-playing">
+          <h2>Now Playing</h2>
+        </Link>
+        <Slider2NowPlaying />
+
+        <Link to="upcoming">
+          <h2>Upcoming</h2>
+        </Link>
+        <Slider4Upcoming />
       </div>
-      ;
     </div>
   );
 }
