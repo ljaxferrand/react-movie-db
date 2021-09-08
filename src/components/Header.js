@@ -8,12 +8,11 @@ function Header() {
 
     return (
         <div>
+            
             <MainNav />
             
 
-                <div className="themeToggle">
-                <Toggle />
-                </div>
+                
                 
 
         </div>
