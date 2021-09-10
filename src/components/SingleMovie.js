@@ -6,6 +6,19 @@ import thumbsDown from "../images/thumbs-down.svg";
 function SingleMovie( {movieData, creditsData} ) {
     console.log(movieData);
     console.log(creditsData);
+
+    let trailerArray = movieData.videos.results;
+    console.log(trailerArray);
+
+    let trailerKey = null;
+
+    for (let i = 0; i < trailerArray.length; i++){
+        if (trailerArray[i].type == 'Trailer'){
+            trailerKey = trailerArray[i].key;
+        }
+    }
+
+    console.log(trailerKey);
     
     return (
         <section className="singleMovie">
@@ -42,6 +55,12 @@ function SingleMovie( {movieData, creditsData} ) {
                                 <p className="runtimeTitle">Runtime</p>
                                 <p className="time">{movieData.runtime} Mins.</p>
                             </div>
+
+                            {trailerKey !== null &&
+                            <div className="trailer">
+                                <p><a href={`https://www.youtube.com/watch?v=${trailerKey}`} target='_blank' rel='noreferrer'>Watch Trailer</a></p>
+                            </div>
+                            }
                         </div>
                     </div>
 

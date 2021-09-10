@@ -14,7 +14,7 @@ function PageSingleMovie() {
 
         const fetchMovie = async () => {
 
-            const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US&append_to_response=credits`, {
+            const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US&append_to_response=credits,videos`, {
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
@@ -23,6 +23,7 @@ function PageSingleMovie() {
             });
             let rawMovieData = await res.json();
             let rawCreditsData = rawMovieData.credits.cast.splice(0, 6);
+
             setMovieData(rawMovieData);
             setCreditsData(rawCreditsData);
         }
