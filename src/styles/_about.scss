@@ -8,7 +8,7 @@ figcaption {
     position: relative; 
     height: auto;
     width: 100vw;
-    opacity: .9;
+    opacity: .8;
     box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
     
 }
@@ -134,7 +134,7 @@ figcaption {
     align-items: center;
     grid-row: 1/2;
     grid-column: 2/4;
-    background-color:#e03e15c9;
+    background-color:#e03e15cb;
     height: 100%;
     padding: 0;
     font-size: 1.5rem;
@@ -175,9 +175,10 @@ figcaption {
 //bcit text
 .item4 {
     display: flex;
+    flex-direction: column;
     grid-row: 2/3;
     grid-column: 1/3;
-    background-color: #3d5a80;
+    background-color: #3d5a8095;
     height: 100%;
     justify-content: center;
     align-items: center;
@@ -193,4 +194,40 @@ figcaption {
         }
     }
 
-    
+.bcitstudents-list li {
+    padding: 10px 10px;
+    text-align: center;
+    & a {
+        text-decoration: none;
+        color: #f5f5f5;
+        transition: .5s ease-in-out;
+        &:hover{
+            color: #e03e15cb;
+            transform: translateY(-5px);
+        }
+    }
+}
+
+@media (min-width: 765px){
+    .bcitstudents-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between; 
+    }
+}
+
+@media (min-width: 1400px){
+    .bcitstudents-list li {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between; 
+        padding: 50px 50px;
+        font-size: 1.35rem;
+    }
+    @media (min-width: 1600px){
+        .bcitstudents-list li {
+            padding: 100px 50px;
+            font-size: 1.75rem;
+        }
+    }
+}

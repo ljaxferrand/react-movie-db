@@ -1,14 +1,14 @@
 // For grid setup --
-.slick-slide {
-  height: auto;
-}
-.slick-track {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: stretch;
-}
+// .slick-slide {
+//   height: auto;
+// }
+// .slick-track {
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: nowrap;
+//   justify-content: center;
+//   align-items: stretch;
+// }
 
 .slick-prev:before {
   content: "\1438
@@ -34,13 +34,14 @@
   @include flex-column;
   position: absolute;
 
-  top: 78vh;
+  top: 97vh;
   left: 3rem;
   right: 3rem;
 
   a {
     color: $primarytxtcolor;
     text-decoration: none;
+    
   }
 
   a:visited {
@@ -48,6 +49,7 @@
   }
 
   a:hover {
+    transition: 0.5s ease-in-out;
     color: $accentcolor;
   }
 
