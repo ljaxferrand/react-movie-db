@@ -5,11 +5,8 @@ import thumbsDown from "../images/thumbs-down.svg";
 import Modal from "./VideoModal";
 
 function SingleMovie( {movieData, creditsData} ) {
-    console.log(movieData);
-    console.log(creditsData);
 
     let trailerArray = movieData.videos.results;
-    console.log(trailerArray);
 
     let trailerKey = null;
 
@@ -18,8 +15,6 @@ function SingleMovie( {movieData, creditsData} ) {
             trailerKey = trailerArray[i].key;
         }
     }
-
-    console.log(trailerKey);
     
     return (
         <section className="singleMovie">
@@ -48,8 +43,7 @@ function SingleMovie( {movieData, creditsData} ) {
 
                             {trailerKey !== null &&
                             <div className="trailer">
-                                <p><a href={`https://www.youtube.com/watch?v=${trailerKey}`} target='_blank' rel='noreferrer'>Watch Trailer</a></p>
-                                {/* <Modal videoID={trailerKey}/> */}
+                                <Modal trailerKey={trailerKey}/>
                             </div>
                             }
                         </div>
@@ -77,7 +71,7 @@ function SingleMovie( {movieData, creditsData} ) {
 
                                 <div className="castArea">
 
-                                    {creditsData[0] !== null && (
+                                    {creditsData[0] !== undefined && (
                                     <div className="castMember">
                                         {creditsData[0].profile_path !== null ? <img src={`https://image.tmdb.org/t/p/original/${creditsData[0].profile_path}`} alt={creditsData[0].name} /> :
                                         <img src={noCastPhoto} alt="cast profile unavailable" /> }
@@ -86,7 +80,7 @@ function SingleMovie( {movieData, creditsData} ) {
                                     </div>
                                     )}
 
-                                    {creditsData[1] !== null && (
+                                    {creditsData[1] !== undefined && (
                                     <div className="castMember">
                                         {creditsData[1].profile_path !== null ? <img src={`https://image.tmdb.org/t/p/original/${creditsData[1].profile_path}`} alt={creditsData[1].name} /> :
                                         <img src={noCastPhoto} alt="cast profile unavailable" /> }
@@ -95,7 +89,7 @@ function SingleMovie( {movieData, creditsData} ) {
                                     </div>
                                     )}
 
-                                    {creditsData[2] !== null && (
+                                    {creditsData[2] !== undefined && (
                                     <div className="castMember">
                                         {creditsData[2].profile_path !== null ? <img src={`https://image.tmdb.org/t/p/original/${creditsData[2].profile_path}`} alt={creditsData[2].name} /> :
                                         <img src={noCastPhoto} alt="cast profile unavailable" /> }
@@ -104,7 +98,7 @@ function SingleMovie( {movieData, creditsData} ) {
                                     </div>
                                     )}
 
-                                    {creditsData[3] !== null && (
+                                    {creditsData[3] !== undefined && (
                                     <div className="castMember">
                                         {creditsData[3].profile_path !== null ? <img src={`https://image.tmdb.org/t/p/original/${creditsData[3].profile_path}`} alt={creditsData[3].name} /> :
                                         <img src={noCastPhoto} alt="cast profile unavailable" /> }
@@ -113,7 +107,7 @@ function SingleMovie( {movieData, creditsData} ) {
                                     </div>
                                     )}
 
-                                    {creditsData[4] !== null && (
+                                    {creditsData[4] !== undefined && (
                                     <div className="castMember">
                                         {creditsData[4].profile_path !== null ? <img src={`https://image.tmdb.org/t/p/original/${creditsData[4].profile_path}`} alt={creditsData[4].name} /> :
                                         <img src={noCastPhoto} alt="cast profile unavailable" /> }
@@ -122,7 +116,7 @@ function SingleMovie( {movieData, creditsData} ) {
                                     </div>
                                     )}
 
-                                    {creditsData[5] !== null && (
+                                    {creditsData[5] !== undefined && (
                                     <div className="castMember">
                                         {creditsData[5].profile_path !== null ? <img src={`https://image.tmdb.org/t/p/original/${creditsData[5].profile_path}`} alt={creditsData[5].name} /> :
                                         <img src={noCastPhoto} alt="cast profile unavailable" /> }

@@ -24,12 +24,12 @@ export class videoModal extends Component {
                 <div className="videoModal">
                     <ModalVideo
                       channel="youtube"
-                      autoplay
+                      autoplay="1"
                       isOpen={this.state.isOpen}
-                    //   videoId={traileyKey}
+                      videoId={this.props.trailerKey}
                       onClose={() => this.setState({isOpen: false })}
                     />
-                    <button onClick={this.openModal}>View Trailer</button>
+                    <button onClick={this.openModal} className="modalBtn">View Trailer</button>
                 </div>
             </div>
         );
