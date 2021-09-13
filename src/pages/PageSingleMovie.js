@@ -31,8 +31,6 @@ function PageSingleMovie() {
         fetchMovie();
     }, []);
 
-
-
     return (
         <section>
             {movieData !== null && <SingleMovie movieData={movieData} creditsData={creditsData} />}
@@ -40,4 +38,4 @@ function PageSingleMovie() {
     )
 }
 
-export default PageSingleMovie
+export default PageSingleMovie;

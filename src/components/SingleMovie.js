@@ -2,6 +2,7 @@ import noPoster from "../images/no-movie-poster.jpg";
 import noCastPhoto from "../images/no-cast-photo.png";
 import thumbsUp from "../images/thumbs-up.svg";
 import thumbsDown from "../images/thumbs-down.svg";
+import Modal from "./VideoModal";
 
 function SingleMovie( {movieData, creditsData} ) {
     console.log(movieData);
@@ -13,7 +14,7 @@ function SingleMovie( {movieData, creditsData} ) {
     let trailerKey = null;
 
     for (let i = 0; i < trailerArray.length; i++){
-        if (trailerArray[i].type == 'Trailer'){
+        if (trailerArray[i].type === 'Trailer'){
             trailerKey = trailerArray[i].key;
         }
     }
@@ -35,14 +36,23 @@ function SingleMovie( {movieData, creditsData} ) {
                     <div className="underPoster">
                         <h2 className="movieTitle">{movieData.title}</h2>
                         
-                        <span className="rating">
-                            {movieData.vote_average > 5 ? (
-                            <img className="thumbs" src={thumbsUp} alt=""></img>
-                            ) : (
-                            <img className="thumbs" src={thumbsDown} alt="" />
-                            )}
-                            <p className="ratingPercent">{movieData.vote_average * 10 + "%"}</p>
-                        </span>
+                        <div className="underTitle">
+                            <span className="rating">
+                                {movieData.vote_average > 5 ? (
+                                <img className="thumbs" src={thumbsUp} alt=""></img>
+                                ) : (
+                                <img className="thumbs" src={thumbsDown} alt="" />
+                                )}
+                                <p className="ratingPercent">{movieData.vote_average * 10 + "%"}</p>
+                            </span>
+
+                            {trailerKey !== null &&
+                            <div className="trailer">
+                                <p><a href={`https://www.youtube.com/watch?v=${trailerKey}`} target='_blank' rel='noreferrer'>Watch Trailer</a></p>
+                                {/* <Modal videoID={trailerKey}/> */}
+                            </div>
+                            }
+                        </div>
 
                         <h3>Synopsis</h3>
                         <p className="movieDes">{movieData.overview}</p>
@@ -51,16 +61,12 @@ function SingleMovie( {movieData, creditsData} ) {
                                 <p className="releaseDateTitle">Release Date</p>
                                 <p className="date">{movieData.release_date}</p>
                             </div>
+
                             <div className="runtime">
                                 <p className="runtimeTitle">Runtime</p>
                                 <p className="time">{movieData.runtime} Mins.</p>
                             </div>
 
-                            {trailerKey !== null &&
-                            <div className="trailer">
-                                <p><a href={`https://www.youtube.com/watch?v=${trailerKey}`} target='_blank' rel='noreferrer'>Watch Trailer</a></p>
-                            </div>
-                            }
                         </div>
                     </div>
 
@@ -137,4 +143,6 @@ function SingleMovie( {movieData, creditsData} ) {
     )
 }
 
-export default SingleMovie
+export default SingleMovie;
+
+
