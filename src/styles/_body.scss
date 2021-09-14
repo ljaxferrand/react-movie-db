@@ -1,8 +1,17 @@
 // Body Styles
-
+html {
+    min-height: 100vh;
+    position: relative;
+ 
+}
 body {
 
     background-color: var(--backgroundprimary);
     color: var(--primarytxtcolor);
+    height: 100%;
+
     padding: $bodyPadding;
+    display: flex;
+    flex-direction: column;
+
 }

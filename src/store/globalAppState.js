@@ -39,6 +39,9 @@ const actions = {
             
         store.setState({ favs: currentFavs });
 
+    },
+    setFavs: (store) => {
+        store.setState({ favs: getFavs() })
     }
 }
 

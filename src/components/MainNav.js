@@ -1,12 +1,14 @@
 import React from 'react';
 import { MenuItems } from './MenuItems';
 import { Link } from 'react-router-dom';
-import logo from '../images/logo.png';
 import Toggle from './Toggle';
+
 
 // import { Button } from './Button';
 
 class Navbar extends React.Component {
+
+    
 
     state = { clicked: false}
 
@@ -14,12 +16,16 @@ class Navbar extends React.Component {
         this.setState({ clicked: !this.state.clicked })
     }
 
+    
+
     render() {
+       
         return(
+            
             <nav className="NavbarItems">
                 {/* // Logo item linking in header  */}
                 
-                    <h1 className="navbar-logo"><Link to="/"><img class="logo" src={logo} alt="Logo" /></Link></h1>
+                    <h1 className="navbar-logo logo logo-button"><Link to="/">...</Link></h1>
                     
                
                 {/* // Event handling of the hamburger and close buttons */}

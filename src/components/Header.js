@@ -7,7 +7,7 @@ function Header() {
     
 
     return (
-        <div>
+        <>
             
             <MainNav />
             
@@ -15,7 +15,7 @@ function Header() {
                 
                 
 
-        </div>
+        </>
     );
 };
 

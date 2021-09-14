@@ -22,8 +22,11 @@ function AppRouter() {
 
     return (
         <Router>
+            
         <div className='wrapper'>
+            <header>
             <Header />
+            </header>
                 <main>
                     <Switch>
                         <Route path='/' exact><PageHome sort='popular' /></Route>
@@ -38,8 +41,12 @@ function AppRouter() {
                         <Route path='*'><Page404 /></Route>
                     </Switch>
                 </main>
+          <footer>
+            <Footer />  
+          </footer>
         </div>
-            {/* <Footer />   */}
+       
+
         </Router>
     )
 }

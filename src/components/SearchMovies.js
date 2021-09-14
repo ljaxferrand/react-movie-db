@@ -4,14 +4,15 @@ import SearchMoviesForm from './SearchMoviesForm';
 function SearchMovies() {
     return (
         <div >
+            
             <div className="container">
                 <h1 className="search-title"></h1>
                 <SearchMoviesForm />
             </div>
-            <div className="background-styles">
+            <div className="background-styles"></div>
 
             </div>
-        </div>
+        
     )
 }
 

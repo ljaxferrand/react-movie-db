@@ -3,7 +3,7 @@
 import heartOutline from "../images/heart-outline.png";
 import heart from "../images/heart.png";
 
-function FavButton({ movieObj, remove, handleFavClick, path }) {
+function FavButton({ movieObj, remove, handleFavClick }) {
     
     
 
@@ -14,9 +14,9 @@ function FavButton({ movieObj, remove, handleFavClick, path }) {
 
     function handleRemoveFav(){
         handleFavClick(false, movieObj);
-            if(window.location.href === '/favs') {
-                window.location.reload();
-            }
+            // if(window.location.href === '/favs') {
+            //     window.location.reload();
+            // }
     }
 
     return (

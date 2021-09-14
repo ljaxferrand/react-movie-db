@@ -12,7 +12,7 @@ function PageHome() {
       <section className="home-page">
         <HeroImage />
       </section>
-
+      <div className="position-home">
       <div className="sliders-container">
         <Link to="popular">
           <h2>Popular</h2>
@@ -33,6 +33,7 @@ function PageHome() {
           <h2>Upcoming</h2>
         </Link>
         <Slider4Upcoming sort="upcoming" />
+      </div>
       </div>
     </div>
   );

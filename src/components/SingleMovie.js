@@ -1,8 +1,30 @@
+import useGlobal from "../store/globalAppState";
+import FavButton from "./FavButton";
 import noPoster from "../images/no-movie-poster.jpg";
 import noCastPhoto from "../images/no-cast-photo.png";
 import thumbsUp from "../images/thumbs-up.svg";
 import thumbsDown from "../images/thumbs-down.svg";
 import Modal from "./VideoModal";
+
+
+
+function SingleMovie( {movieData, creditsData, movieObj, isFav} ) {
+
+  const globalStateAndglobalActions = useGlobal();
+  const globalActions = globalStateAndglobalActions[1];
+
+  function handleFavClick(addToFav, obj) {
+      console.log(addToFav)
+    if (addToFav === true) {
+      globalActions.addFav(obj);
+    } else {
+      globalActions.removeFav(obj.id);
+    }
+  }
+    // console.log(movieData);
+    // console.log(creditsData);
+    movieObj = movieData;
+    // console.log(movieObj)
 
 function SingleMovie( {movieData, creditsData} ) {
 
@@ -15,6 +37,7 @@ function SingleMovie( {movieData, creditsData} ) {
             trailerKey = trailerArray[i].key;
         }
     }
+
     
     return (
         <section className="singleMovie">
@@ -31,6 +54,8 @@ function SingleMovie( {movieData, creditsData} ) {
                     <div className="underPoster">
                         <h2 className="movieTitle">{movieData.title}</h2>
                         
+
+                        
                         <div className="underTitle">
                             <span className="rating">
                                 {movieData.vote_average > 5 ? (
@@ -39,6 +64,20 @@ function SingleMovie( {movieData, creditsData} ) {
                                 <img className="thumbs" src={thumbsDown} alt="" />
                                 )}
                                 <p className="ratingPercent">{movieData.vote_average * 10 + "%"}</p>
+                                 <div className="btn-favourite">
+              {isFav ? (
+                <FavButton
+                  movieObj={movieObj}
+                  remove={true}
+                  handleFavClick={handleFavClick}
+                />
+              ) : (
+                <FavButton
+                  movieObj={movieObj}
+                  handleFavClick={handleFavClick}
+                />
+              )}
+            </div>
                             </span>
 
                             {trailerKey !== null &&
@@ -47,6 +86,7 @@ function SingleMovie( {movieData, creditsData} ) {
                             </div>
                             }
                         </div>
+
 
                         <h3>Synopsis</h3>
                         <p className="movieDes">{movieData.overview}</p>

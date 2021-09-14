@@ -10,6 +10,7 @@ function MovieCard({ movieObj, isFav }) {
   const globalActions = globalStateAndglobalActions[1];
 
   function handleFavClick(addToFav, obj) {
+    console.log(addToFav)
     if (addToFav === true) {
       globalActions.addFav(obj);
     } else {
