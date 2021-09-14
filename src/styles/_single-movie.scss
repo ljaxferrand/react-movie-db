@@ -14,17 +14,21 @@
 
                 @include mq($tabletBP){
                     width: 60%;
+                    margin-bottom: 2rem;
+                    margin-top: 4rem;
                 }
+
 
                 @include mq($desktopBP){
                     margin: 0;
                     margin-left: 5%;
-                    width: 37%;
+                    width: 40%;
                     max-width: 28rem;
+                    margin-top: 4rem;
                 }
 
                 @include mq($desktopWideBP){
-                    max-width: 33rem;
+                    max-width: 32rem;
                     margin-right: 2rem;
                 }
             }
@@ -37,23 +41,29 @@
 
                 @include mq($desktopBP){
                     position: absolute;
-                    top: 12%;
+                    top: 15%;
                     max-width: 50vw;
                     right: 30px;
-                    overflow: hidden;
+                    word-wrap: break-word;
+                    // overflow: hidden;
                 }
 
                 @include mq($desktopWideBP){
                     max-width: 55vw;
                     top: 15%;
-                    right: 7%;
+                    right: 6%;
                     padding-left: 7rem;
+                }
+
+                @include mq(1600px){
+                    right: 9%;
                 }
 
                 .movieTitle {
                     text-align: center;
-                    margin: 1rem 0 auto;
+                    margin: 1rem auto;
                     font-size: 1.8em;
+                    max-width: 90vw;
 
                     @include mq($tabletBP){
                         font-size: 2.7em;
@@ -65,56 +75,105 @@
 
                     @include mq($desktopWideBP){
                         font-size: 3rem;
-                        margin-bottom: 2rem;
+                        margin-bottom: 1rem;
                     }
                 }
 
-
-                .rating {
-                    display: flex;
-                    justify-content: center;
-                    margin: 1rem 0;
+                .underTitle{
+                    display: block;
 
                     @include mq($desktopBP){
-                        justify-content: left;       
+                        display: flex;
                     }
 
-                    img {
-                        width: 50px;
-
-                        @include mq($tabletBP){
-                            width: 70px;
-                        }
-
+                    .rating {
+                        display: flex;
+                        justify-content: center;
+                        margin: 1rem 0;
+    
                         @include mq($desktopBP){
-                            width: 50px;
+                            justify-content: left;       
                         }
+    
+                        img {
+                            width: 50px;
+    
+                            @include mq($tabletBP){
+                                width: 70px;
+                            }
+                        }
+    
+                        .ratingPercent{
+                            margin-left: 10px;
+                            font-size: 1.7em;
+                            padding-top: 2px;
+                        
+                            @include mq($tabletBP){
+                                font-size: 2.5em;
+                            }
 
-                        @include mq($desktopWideBP){
-                            width: 70px;
+                            @include mq($desktopBP){
+                                padding-top: 5px;
+                            }
+                            
+                            @include mq($desktopWideBP){
+                                font-size: 2.5em;
+                                padding-top: 9px;
+                                margin-left: 1rem;
+                                margin-bottom: 1rem;
+                            }
+                        }
+                    }
+
+                    .trailer {
+                        @include mq($desktopBP){
+                            padding-top: 8px;
                             
                         }
-                    }
 
-                    .ratingPercent{
-                        margin-left: 10px;
-                        font-size: 1.7em;
-                    
-                        @include mq($tabletBP){
-                            font-size: 2.5em;
+                        button.modalBtn {
+                            display: block;
+                            white-space: nowrap;
+                            font-size: 1em;
+                            text-align: center;
+                            margin: 0 auto;
+                            margin-bottom: 3rem;
+                            color: $primarytxtcolor;
+                            border: 3px solid $accentcolor;
+                            border-radius: 15px;
+                            padding: 0.3rem 0.7rem;
+                            background-color: $accentcolor;
+
+                            @include mq($tabletBP){
+                                font-size: 1.8em;
+                                margin-top: 3rem;
+                                margin-bottom: 4rem;
+                            }
+
+                            @include mq($desktopBP){
+                                font-size: 1.3em;
+                                margin-left: 3.5rem;
+                                margin-bottom: 3rem;
+
+                                transition: transform 0.3s ease-in;
+
+                                &:hover {
+                                    transform: scale(1.08, 1.08);
+                                    cursor: pointer;
+                                }
+                                
+                            }
+
+                            @include mq($desktopWideBP){
+                                font-size: 1.8em;
+                                margin-left: 4rem;
+                            }
                         }
 
-                        @include mq($desktopBP){
-                            font-size: 1.7em;   
-                        }
                         
-                        @include mq($desktopWideBP){
-                            font-size: 2.5em;
-                            margin-left: 2rem;
-                            margin-bottom: 2rem;
-                        }
                     }
                 }
+                
 
                 h3 {
                     font-size: 1.4em;
@@ -135,6 +194,7 @@
                     }
 
                     @include mq($desktopWideBP){
+                        margin-top: 1rem;
                         font-size: 2.2em;
                         text-underline-offset: 12px;
 
@@ -153,7 +213,7 @@
                     }
 
                     @include mq($desktopBP){
-                        width: 50vw;
+                        max-width: 50vw;
                         font-size: 1.1em;
                     }
 
@@ -183,6 +243,7 @@
                     }
                     
                     .releaseDate {
+                        white-space: nowrap;
 
                         @include mq($desktopBP){
                             margin-right: 5rem;    
@@ -228,7 +289,7 @@
                     }
         
                     .runtime {
-        
+
                         .runtimeTitle {
                             font-size: 1.4em;
                             text-align: center;

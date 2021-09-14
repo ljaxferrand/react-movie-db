@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from "react-router-dom";
 // import Movies from '../components/Movies';
 import { API_TOKEN } from '../globals/globals';
 import Slider from 'react-slick';
@@ -50,18 +51,53 @@ function HeroImage() {
                     <Slider {...settings}>
                     <div>
                         <img src={`https://image.tmdb.org/t/p/original/${movieData[0].backdrop_path}`} alt={`Poster for ${movieData[0].title}`} />
+                        <div className="sliderText">
+                            <h2>{movieData[0].title}</h2>
+                            {/* <p className='hero-synopsis'>{movieData[0].overview}</p> */}
+                            <Link className="btn-more-info" to={`/movie/${movieData[0].id}`}>
+                            More Info
+                            </Link>
+                        </div>
                     </div>
                     <div>
                         <img src={`https://image.tmdb.org/t/p/original/${movieData[1].backdrop_path}`} alt={`Poster for ${movieData[1].title}`} />
+                        <div className="sliderText">
+                            <h2>{movieData[1].title}</h2>
+                            {/* <p className='hero-synopsis'>{movieData[1].overview}</p> */}
+                            <Link className="btn-more-info" to={`/movie/${movieData[1].id}`}>
+                            More Info
+                            </Link>
+                        </div>
                     </div>
                     <div>
                         <img src={`https://image.tmdb.org/t/p/original/${movieData[2].backdrop_path}`} alt={`Poster for ${movieData[2].title}`} />
+                        <div className="sliderText">
+                            <h2>{movieData[2].title}</h2>
+                            {/* <p className='hero-synopsis'>{movieData[2].overview}</p> */}
+                            <Link className="btn-more-info" to={`/movie/${movieData[2].id}`}>
+                            More Info
+                            </Link>
+                        </div>
                     </div>
                     <div>
                         <img src={`https://image.tmdb.org/t/p/original/${movieData[3].backdrop_path}`} alt={`Poster for ${movieData[3].title}`} />
+                        <div className="sliderText">
+                            <h2>{movieData[3].title}</h2>
+                            {/* <p className='hero-synopsis'>{movieData[3].overview}</p> */}
+                            <Link className="btn-more-info" to={`/movie/${movieData[3].id}`}>
+                            More Info
+                            </Link>
+                        </div>
                     </div>
                     <div>
                         <img src={`https://image.tmdb.org/t/p/original/${movieData[4].backdrop_path}`} alt={`Poster for ${movieData[4].title}`} />
+                        <div className="sliderText">
+                            <h2>{movieData[4].title}</h2>
+                            {/* <p className='hero-synopsis'>{movieData[4].overview}</p> */}
+                            <Link className="btn-more-info" to={`/movie/${movieData[4].id}`}>
+                            More Info
+                            </Link>
+                        </div>
                     </div>
                     
                     </Slider>
