@@ -8,7 +8,7 @@ function PageUpcoming({ sort }) {
   useEffect(() => {
     const fetchMovies = async () => {
       const res = await fetch(
-        `https://api.themoviedb.org/3/movie/${sort}?&language=en-US&page=1`,
+        `https://api.themoviedb.org/3/movie/${sort}?&language=en-US&region=CA|US&with_release_type=2|3`,
         {
           headers: {
             Accept: "application/json",

@@ -6,17 +6,15 @@ function Slider4Upcoming({ sort }) {
   const [movieData, setMovieData] = useState(null);
 
   useEffect(() => {
-    let controller = new AbortController();
     const fetchMovies = async () => {
       const res = await fetch(
-        `https://api.themoviedb.org/3/movie/${sort}?&language=en-US&page=1`,
+        `https://api.themoviedb.org/3/movie/${sort}?&language=en-US&region=CA|US&with_release_type=2|3`,
         {
           headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
             Authorization: "Bearer " + API_TOKEN,
           },
-          signal: controller.signal,
         }
       );
       let rawMovieData = await res.json();
@@ -26,9 +24,7 @@ function Slider4Upcoming({ sort }) {
     };
 
     fetchMovies();
-
-    return () => controller?.abort();
-  });
+  }, [sort]);
 
   return (
     <div>

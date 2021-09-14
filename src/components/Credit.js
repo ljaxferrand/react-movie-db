@@ -29,7 +29,15 @@ function credit() {
                     <a href="https://www.bcit.ca/programs/front-end-web-developer-certificate-full-time-6535cert/"><img class="bcit-logo" src={bcitLogo}/></a>
                 </div>
                 <div className="item4">
-                    <p className="about-text">Enjoy browsing your favourite movies on this site. It was made possible by the contributions of the BCIT front-end web development program, its instructors, and of course, the its dedicated developers.</p>
+                    <p className="about-text">Enjoy browsing your favourite movies on this site. It was made possible by the contributions of the BCIT front-end web development program, its instructors, and of course, a team of dedicated developers.</p>
+                    <div className="bcitstudents-container">
+                    <ul className="bcitstudents-list">
+                        <li><a href="https://chivitran.com">Chivi Tran</a></li>
+                        <li>LJ MacLean-Ferrand</li>
+                        <li>Chris Coulson</li>
+                        <li>Nicole Holland</li>
+                    </ul>
+                </div>
                 </div>
                 
             </div>  
