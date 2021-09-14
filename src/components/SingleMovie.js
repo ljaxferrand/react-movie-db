@@ -26,8 +26,6 @@ function SingleMovie( {movieData, creditsData, movieObj, isFav} ) {
     movieObj = movieData;
     // console.log(movieObj)
 
-function SingleMovie( {movieData, creditsData} ) {
-
     let trailerArray = movieData.videos.results;
 
     let trailerKey = null;
