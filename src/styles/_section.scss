@@ -1,0 +1,21 @@
+.favourites {
+    padding: 10rem 0 5rem 3rem;
+    min-height: 800px;
+    color: var(--sortTitles);
+
+}
+
+.favourites a {
+    color: var(--backgroundsecondary);
+    text-decoration: none;
+
+    
+}
+
+.favourites a:hover {
+    color: var(--accentcolor);
+}
+
+.category-container {
+    padding-top: 8rem;
+}

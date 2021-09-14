@@ -1,11 +1,28 @@
+import useGlobal from "../store/globalAppState";
+import FavButton from "./FavButton";
 import noPoster from "../images/no-movie-poster.jpg";
 import noCastPhoto from "../images/no-cast-photo.png";
 import thumbsUp from "../images/thumbs-up.svg";
 import thumbsDown from "../images/thumbs-down.svg";
 
-function SingleMovie( {movieData, creditsData} ) {
-    console.log(movieData);
-    console.log(creditsData);
+
+function SingleMovie( {movieData, creditsData, movieObj, isFav} ) {
+
+  const globalStateAndglobalActions = useGlobal();
+  const globalActions = globalStateAndglobalActions[1];
+
+  function handleFavClick(addToFav, obj) {
+      console.log(addToFav)
+    if (addToFav === true) {
+      globalActions.addFav(obj);
+    } else {
+      globalActions.removeFav(obj.id);
+    }
+  }
+    // console.log(movieData);
+    // console.log(creditsData);
+    movieObj = movieData;
+    // console.log(movieObj)
     
     return (
         <section className="singleMovie">
@@ -29,6 +46,20 @@ function SingleMovie( {movieData, creditsData} ) {
                             <img className="thumbs" src={thumbsDown} alt="" />
                             )}
                             <p className="ratingPercent">{movieData.vote_average * 10 + "%"}</p>
+                            <div className="btn-favourite">
+              {isFav ? (
+                <FavButton
+                  movieObj={movieObj}
+                  remove={true}
+                  handleFavClick={handleFavClick}
+                />
+              ) : (
+                <FavButton
+                  movieObj={movieObj}
+                  handleFavClick={handleFavClick}
+                />
+              )}
+            </div>
                         </span>
 
                         <h3>Synopsis</h3>

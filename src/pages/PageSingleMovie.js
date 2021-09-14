@@ -1,3 +1,5 @@
+import useGlobal from "../store/globalAppState";
+import isFav from "../utilities/isFav";
 import SingleMovie from "../components/SingleMovie";
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -10,8 +12,12 @@ function PageSingleMovie() {
 
     const { id } = useParams();
 
+    const globalStateAndglobalActions = useGlobal();
+    const globalState = globalStateAndglobalActions[0];
+
     useEffect(() => {
 
+       
         const fetchMovie = async () => {
 
             const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US&append_to_response=credits`, {
@@ -30,11 +36,27 @@ function PageSingleMovie() {
         fetchMovie();
     }, []);
 
-
+    // return (
+    //     <>
+    //       {movieData.map((oneMovie, i) => {
+    //         return (
+    //           <SingleMovie
+    //             movieData={movieData}
+    //             creditsData={creditsData}
+    //             key={i}
+    //             movieObj={oneMovie}
+    //             isFav={isFav(globalState.favs, null, oneMovie.id)}
+    //           />
+    //         );
+    //       })}
+    //     </>
+    //   );
+    // }
+          
 
     return (
         <section>
-            {movieData !== null && <SingleMovie movieData={movieData} creditsData={creditsData} />}
+            {movieData !== null && <SingleMovie movieData={movieData} creditsData={creditsData} isFav={isFav(globalState.favs, null, movieData.id)}/>}
         </section>
     )
 }

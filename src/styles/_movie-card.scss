@@ -1,14 +1,18 @@
 // For grid setup --
-.slick-slide {
-  height: auto;
-}
-.slick-track {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: stretch;
-}
+// .slick-slide {
+//   height: auto;
+// }
+// .slick-track {
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: nowrap;
+//   justify-content: center;
+//   align-items: stretch;
+// }
+
+// .position-home {
+//   max-height: 3000px;
+// }
 
 .slick-prev:before {
   content: "\1438
@@ -32,19 +36,19 @@
 
 .sliders-container {
   @include flex-column;
-  position: absolute;
-
-  top: 78vh;
+  position: relative;
+  width: calc(100% - 100px);
+  // padding-top: 55rem;
   left: 3rem;
   right: 3rem;
 
   a {
-    color: $primarytxtcolor;
+    color: var(--sortTitles);
     text-decoration: none;
   }
 
   a:visited {
-    color: $primarytxtcolor;
+    color: var(--sortTitles);
   }
 
   a:hover {

@@ -6,9 +6,8 @@
     --white-background: #f5f5f5;
     --white-border: #f5f5f5;
     /** dark side **/
-   
     --red-border: #E03D15;
-    
+    min-height: 100vh;
 
     // theme styls
     --backgroundprimary: #293241;
@@ -19,13 +18,16 @@
 }
 
 .toggle-container {
-    display: flex;
-    justify-content: flex-end;
-    margin: 0 3.5rem 1rem 0;
-    z-index: 200;
+    display: grid;
+    place-items: center;
+    min-height: 60px;
+    position: relative;
+    grid-area: toggle;
+    top: 10px;
     right: 0;
     
 }
+
 
 @keyframes reverse {
     0% {

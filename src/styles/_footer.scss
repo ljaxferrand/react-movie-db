@@ -1,0 +1,56 @@
+
+footer {
+    position: relative;
+    order: 10;
+    justify-content: flex-end;
+    padding: $bodyPadding/3 $bodyPadding;
+    background-color: var(--backgroundsecondary);
+    margin-top: auto;
+    
+}
+
+.footer-flex {
+    @include flex-row;
+    justify-content: space-between;
+    
+    align-items: center;
+}
+
+.footer-col-1 {
+    text-align: right;
+
+    p {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+}
+
+.footer-col-2 {
+
+    text-align: left;
+    
+    ul {
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    li {
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    a {
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+        text-decoration: none;
+        color: white;
+        
+    }
+
+    a:hover {
+        color: $accentcolor;
+    }
+}
