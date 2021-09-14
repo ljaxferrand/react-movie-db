@@ -13,6 +13,7 @@ export default function SearchMoviesForm(props){
     const [movies, setMovies] = useState([]);
 
     const searchMovies = async(e) => {
+
         e.preventDefault();
         // console.log("submitting");
 
@@ -31,14 +32,16 @@ export default function SearchMoviesForm(props){
 
     return (
         <>
+        
         <fieldset className='search-box-container'>
             <p className="search-message">The search for millions of movies is over. Viewport helps you find the movies, actors, and genres you love.</p>
             <form className="form" onSubmit={searchMovies}>
                 <label className="label" htmlFor="query"></label>
-                <input className="input" type="text" name="query" placeholder="Type a name to search..."
+                <input className="input" type="search" name="query" placeholder="Type a name to search..."
                 value={query} onChange={(e) => setQuery(e.target.value)}/>
                 <button className="button">Search</button>
             </form>
+            {/* { noMoviesMessage() } */}
         </fieldset>
 
             <div className="card-list">

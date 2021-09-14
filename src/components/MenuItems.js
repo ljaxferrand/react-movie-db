@@ -6,6 +6,7 @@ import * as FcIcons from 'react-icons/fc';
 import { IoMdPeople } from 'react-icons/io';
 
 
+
 export const MenuItems = [
     {
         title: [' ABOUT'],
@@ -13,12 +14,12 @@ export const MenuItems = [
         cName: 'nav-links'
     },
     {
-        title: [<IoIcons.IoMdSearch size="20px" />, ' SEARCH'],
+        title: ['SEARCH'],
         url: '/search',
         cName: 'nav-links'
     },
     {
-        title: 'FAVOURITES',
+        title: ['FAVOURITES'],
         url: '/favs',
         cName: 'nav-links'
     },

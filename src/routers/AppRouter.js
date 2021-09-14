@@ -39,9 +39,7 @@ function AppRouter() {
                     </Switch>
                 </main>
         </div>
-        <footer>
-            <Footer />  
-        </footer>
+            {/* <Footer />   */}
         </Router>
     )
 }
