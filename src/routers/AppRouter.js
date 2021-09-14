@@ -41,11 +41,12 @@ function AppRouter() {
                         <Route path='*'><Page404 /></Route>
                     </Switch>
                 </main>
-                <footer>
+          <footer>
             <Footer />  
-        </footer>
+          </footer>
         </div>
        
+
         </Router>
     )
 }

@@ -1,20 +1,10 @@
 body {
-    margin: auto;
-    padding: 0px 0;
+  margin: auto;
+  padding: 0px 0;
 }
 
-// .logo-titles {
-//     display: flex;
-//     justify-content: start;
-//     flex-direction: column;
-//     margin: 0;
-// }
-
-// #subtitle {
-//     margin: 0 auto;
-// }
-
 .logo {
+
     display: flex;
     align-items: center;
     height: 135px;
@@ -44,11 +34,10 @@ body {
     
     height: 135px;
     order: 1000;
-    
-}
 
 
 .NavbarItems {
+
     position: absolute;
     top: 0px;
     left: 0px;
@@ -68,50 +57,69 @@ body {
 }
 
 .nav-menu {
-    padding: 0px 25px 0px 0px;
-    margin: 0; 
-    display: grid;
-    grid-template-columns: repeat(5, auto);
-    grid-gap: 10px; 
-    list-style: none;
-    text-align: center;
-    width: 70vw;
-    justify-content: end;
-    align-items: center;
+  padding: 0px 25px 0px 0px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-gap: 10px;
+  list-style: none;
+  text-align: center;
+  width: 70vw;
+  justify-content: end;
+  align-items: center;
 }
 
-.nav-links {
-    text-transform: uppercase;
-    font-size: 1.75rem;
+.nav-menu.active {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
 
-    font-weight: 200;
-    color: var(--navtext);
-
-    padding: 5px 15px;
-    text-decoration: none;
-    transition: .5s ease-in-out;
-    &:hover {
-        // background-color: #304972c8;
-        color: $accentcolor;
-        font-weight: 400;
-        letter-spacing: 2px;
-        box-shadow: 0px 10px 12px -6px $accentcolor;
-        transform: translateY(-10px);
-        border-radius: 0px 0px 5px 5px;
-        // background-color: $backgroundsecondary;
-        // border-radius: 4px; 
-        // color: $accentcolor;
-        // padding: 5px 10px;
+@media (min-width: 765px){
+    .nav-menu.active {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        justify-content: center;
+        align-items: center;
     }
 }
 
+.nav-links {
+
+  text-transform: uppercase;
+  font-size: 1.75rem;
+
+  font-weight: 200;
+  color: var(--navtext);
+
+  padding: 5px 15px;
+  text-decoration: none;
+  transition: 0.5s ease-in-out;
+  &:hover {
+    // background-color: #304972c8;
+    color: $accentcolor;
+    font-weight: 400;
+    letter-spacing: 2px;
+    box-shadow: 0px 10px 12px -6px $accentcolor;
+    transform: translateY(-10px);
+    border-radius: 0px 0px 5px 5px;
+    // background-color: $backgroundsecondary;
+    // border-radius: 4px;
+    // color: $accentcolor;
+    // padding: 5px 10px;
+  }
+
+
 .nav-links-mobile {
-    display: none;
+  display: none;
 }
 
 .menu-icon {
-    display: none;
+  display: none;
 }
+
 
 @media (max-width: $tabletBP ) {
     .NavbarItems {
@@ -140,37 +148,37 @@ body {
         z-index: 1000;
     }
 
-    .nav-links {
-        font-size: 1.5rem;
-        text-align: center;
-        padding: 1rem 125px;
-        margin-top: 50px;
-        width: 100%;
-        display: table;
-        transition: 0.3s ease-in-out;
-    }
-    .nav-links:hover {
-        border-radius: 0px 0px 5px 5px;
-        color: $accentcolor;
-        letter-spacing: 2px;
-        box-shadow: 0px 10px 12px -6px $accentcolor;
-    }
-    .navbar-logo {
-        
-        // position: absolute;
-        // top: 0;
-        // left: 0;
-        transform: translate(5%);
-        transition: 1s ease-in-out;
-    }
 
-    .menu-icon {
-        display: block;
-        position: absolute;
-        top: 25px;
-        right: 0;
-        transform: translate(-100%, 70%);
-        font-size: 1.8rem;
-        cursor: pointer;
-    }
+  .nav-links {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 1rem 125px;
+    margin-top: 50px;
+    width: 100%;
+    display: table;
+    transition: 0.3s ease-in-out;
+  }
+  .nav-links:hover {
+    border-radius: 0px 0px 5px 5px;
+    color: $accentcolor;
+    letter-spacing: 2px;
+    box-shadow: 0px 10px 12px -6px $accentcolor;
+  }
+  .navbar-logo {
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    transform: translate(5%);
+    transition: 1s ease-in-out;
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 25px;
+    right: 0;
+    transform: translate(-100%, 70%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
 }

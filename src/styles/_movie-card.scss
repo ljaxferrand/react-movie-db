@@ -1,18 +1,3 @@
-// For grid setup --
-// .slick-slide {
-//   height: auto;
-// }
-// .slick-track {
-//   display: flex;
-//   flex-direction: row;
-//   flex-wrap: nowrap;
-//   justify-content: center;
-//   align-items: stretch;
-// }
-
-// .position-home {
-//   max-height: 3000px;
-// }
 
 .slick-prev:before {
   content: "\1438
@@ -35,16 +20,19 @@
 }
 
 .sliders-container {
+  z-index: 9997;
   @include flex-column;
   position: relative;
   width: calc(100% - 100px);
   // padding-top: 55rem;
+
   left: 3rem;
   right: 3rem;
 
   a {
     color: var(--sortTitles);
     text-decoration: none;
+    
   }
 
   a:visited {
@@ -52,13 +40,13 @@
   }
 
   a:hover {
+    transition: 0.5s ease-in-out;
     color: $accentcolor;
   }
 
   h2 {
     padding-top: 2.5rem;
   }
-
 }
 
 .category-container {
@@ -66,28 +54,17 @@
     text-align: center;
     padding-bottom: 2rem;
   }
+
+  @include mq($tabletBP) {
+    position: absolute;
+    top: 8rem;
+  }
 }
 
 .movies-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 2rem;
-
-  @include mq(700px) {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  @include mq(1015px) {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  @include mq(1500px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-
-  @include mq(1920px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .movie-poster {
@@ -96,13 +73,14 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: all 0.3s linear;
   }
   width: 100%;
   height: 100%;
 }
 
 .card-container {
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
 }
 
 .movie-card {
@@ -114,6 +92,7 @@
   margin: auto;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.5) 6px 10px 12px;
+  overflow: hidden;
 }
 
 .movie-info {
@@ -122,14 +101,19 @@
   right: 0;
   left: 0;
   margin: auto;
-  background-color: rgba($backgroundsecondary, 0.97);
+  background-color: rgba($backgroundsecondary, 0.9);
   padding: 1.5rem;
   height: 101.5%;
   border-radius: 10px;
+  transition: all 0.2s ease-in-out;
 
   @media (max-width: 400px) {
     padding: 0.75rem;
   }
+}
+
+.movie-card:hover img {
+  transform: scale(1.2);
 }
 
 .card-header {
@@ -138,10 +122,12 @@
   align-items: center;
 }
 
-.movie-card:hover {
+.movie-card:hover,
+.movie-card:active,
+.movie-card:focus {
   .movie-info {
     @include flex-column;
-    
+
     justify-content: flex-start;
 
     h3 {
@@ -211,4 +197,8 @@
       }
     }
   }
+}
+
+.movie-card a.btn-more-info:hover {
+  box-shadow: 0 0 5px #fff;
 }

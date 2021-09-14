@@ -20,7 +20,7 @@ function PageSingleMovie() {
        
         const fetchMovie = async () => {
 
-            const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US&append_to_response=credits`, {
+            const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US&append_to_response=credits,videos`, {
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
@@ -29,30 +29,15 @@ function PageSingleMovie() {
             });
             let rawMovieData = await res.json();
             let rawCreditsData = rawMovieData.credits.cast.splice(0, 6);
+
             setMovieData(rawMovieData);
             setCreditsData(rawCreditsData);
         }
 
         fetchMovie();
     }, []);
-
-    // return (
-    //     <>
-    //       {movieData.map((oneMovie, i) => {
-    //         return (
-    //           <SingleMovie
-    //             movieData={movieData}
-    //             creditsData={creditsData}
-    //             key={i}
-    //             movieObj={oneMovie}
-    //             isFav={isFav(globalState.favs, null, oneMovie.id)}
-    //           />
-    //         );
-    //       })}
-    //     </>
-    //   );
-    // }
           
+
 
     return (
         <section>
@@ -61,4 +46,4 @@ function PageSingleMovie() {
     )
 }
 
-export default PageSingleMovie
+export default PageSingleMovie;

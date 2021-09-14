@@ -6,7 +6,6 @@ function Slider2NowPlaying({ sort }) {
   const [movieData, setMovieData] = useState(null);
 
   useEffect(() => {
-    let controller = new AbortController();
     const fetchMovies = async () => {
       const res = await fetch(
         `https://api.themoviedb.org/3/movie/${sort}?&language=en-US&page=1`,
@@ -16,7 +15,6 @@ function Slider2NowPlaying({ sort }) {
             "Content-Type": "application/json",
             Authorization: "Bearer " + API_TOKEN,
           },
-          signal: controller.signal,
         }
       );
       let rawMovieData = await res.json();
@@ -24,10 +22,8 @@ function Slider2NowPlaying({ sort }) {
 
       setMovieData(rawMovieData);
     };
-
     fetchMovies();
-    return () => controller?.abort();
-  });
+  }, [sort]);
 
   return (
     <div>

@@ -1,6 +1,5 @@
-.hero-container {
-    
 
+.hero-container {
     .slick-slider { 
         box-sizing: border-box;
         width: 100%;
@@ -8,15 +7,87 @@
         position: relative;
         left: 0;
         right: 0;
+        top: 0;
 
-        
+        .sliderText {
+            z-index: 1000;
+            position: absolute;
+            bottom: 13%;
+            left: 0;
+            right: 0;
+            text-align: center;
+
+            @include mq($tabletBP){
+                bottom: 15%;
+            }
+
+            h2 {
+                // font-family: 'Open Sans', sans-serif;
+                text-align: center;
+                font-size: 22px;
+                letter-spacing: 1px;
+                max-width: 80vw;
+                margin: 1.5rem auto;
+
+                text-shadow:
+                0.05em 0 black,
+                0 0.05em black,
+                -0.05em 0 black,
+                0 -0.05em black,
+                -0.05em -0.05em black,
+                -0.05em 0.05em black,
+                0.05em -0.05em black,
+                0.05em 0.05em black;
+
+                @include mq($tabletBP){
+                    font-size: 26px;
+                    margin: 2rem auto;
+                }
+
+                @include mq($desktopBP){
+                    font-size: 34px;
+                }
+
+                @include mq($desktopWideBP){
+                    font-size: 38px;
+                }
+            }
+
+            .btn-more-info {
+                text-align: center;
+                max-width: 20vw;
+                z-index: 1000;
+                margin: 0 auto;
+                width: 200px;
+                font-size: 16px;
+                padding: 0.3rem 1rem;
+
+                @include mq($tabletBP){
+                    font-size: 22px;
+                    padding: 0.4rem 1.3rem;
+                }
+
+                @include mq($desktopWideBP){
+                    font-size: 26px;
+                    padding: 0.4rem 1.5rem;
+
+                    &:hover {
+                        transform: scale(1.2);
+                        transition: 0.5s;
+                    }
+                }
+
+                
+            }
+            
+        }
 
         &:before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            // background-color: rgba(0, 0, 0, 0.728);
+            //background-color: rgba(0, 0, 0, 0.728);
             background-image: linear-gradient(
                     180deg,
                     transparent,
@@ -24,11 +95,11 @@
                     var(--hoverBackground)
                 );
             width: 100%;
-            height: 99.7%;
+            height: 100%;
             z-index: 10;
             opacity: 1;
+            pointer-events: none;
         }
-
 
         img {
             display: block;

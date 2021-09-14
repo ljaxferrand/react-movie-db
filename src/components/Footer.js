@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 
 function Footer() {
     return (
+
         <div className="footer-flex">
 
             <div className='footer-col-2'>
@@ -18,6 +19,7 @@ function Footer() {
                 <p>&copy; Chris Coulson, Chivi Tran, LJ Maclean-Ferrand and Nicole Holland</p>
 
             </div>
+
         </div>
     )
 }
