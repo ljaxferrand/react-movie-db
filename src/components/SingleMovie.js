@@ -62,27 +62,32 @@ function SingleMovie( {movieData, creditsData, movieObj, isFav} ) {
                                 <img className="thumbs" src={thumbsDown} alt="" />
                                 )}
                                 <p className="ratingPercent">{movieData.vote_average * 10 + "%"}</p>
-                                 <div className="btn-favourite">
-              {isFav ? (
-                <FavButton
-                  movieObj={movieObj}
-                  remove={true}
-                  handleFavClick={handleFavClick}
-                />
-              ) : (
-                <FavButton
-                  movieObj={movieObj}
-                  handleFavClick={handleFavClick}
-                />
-              )}
-            </div>
                             </span>
+
+                            
 
                             {trailerKey !== null &&
                             <div className="trailer">
                                 <Modal trailerKey={trailerKey}/>
                             </div>
                             }
+
+                            <div className="btn-favourite-single">
+                                {isFav ? (
+                                    <FavButton
+                                    movieObj={movieObj}
+                                    remove={true}
+                                    handleFavClick={handleFavClick}
+                                    />
+                                ) : (
+                                    <FavButton
+                                    movieObj={movieObj}
+                                    handleFavClick={handleFavClick}
+                                    />
+                                )}
+                            </div>
+
+                            
                         </div>
 
 
