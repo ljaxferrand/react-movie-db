@@ -15,7 +15,7 @@
                 @include mq($tabletBP){
                     width: 60%;
                     margin-bottom: 2rem;
-                    margin-top: 4rem;
+                    margin-top: 8rem;
                 }
 
 
@@ -24,7 +24,7 @@
                     margin-left: 5%;
                     width: 40%;
                     max-width: 28rem;
-                    margin-top: 4rem;
+                    margin-top: 8rem;
                 }
 
                 @include mq($desktopWideBP){
@@ -41,7 +41,7 @@
 
                 @include mq($desktopBP){
                     position: absolute;
-                    top: 15%;
+                    top: 6%;
                     max-width: 50vw;
                     right: 30px;
                     word-wrap: break-word;
@@ -50,7 +50,7 @@
 
                 @include mq($desktopWideBP){
                     max-width: 55vw;
-                    top: 15%;
+                    top: 8%;
                     right: 6%;
                     padding-left: 7rem;
                 }
@@ -64,6 +64,8 @@
                     margin: 1rem auto;
                     font-size: 1.8em;
                     max-width: 90vw;
+                    color: var(--sortTitles);
+                    margin-bottom: 0;
 
                     @include mq($tabletBP){
                         font-size: 2.7em;
@@ -84,13 +86,18 @@
 
                     @include mq($desktopBP){
                         display: flex;
+                        margin-left: -1rem;
                     }
 
                     .rating {
                         display: flex;
                         justify-content: center;
-                        margin: 1rem 0;
-    
+                        margin: 0;
+                        
+                        @include mq($tabletBP){
+                            margin: 1rem;
+                        }
+
                         @include mq($desktopBP){
                             justify-content: left;       
                         }
@@ -101,33 +108,44 @@
                             @include mq($tabletBP){
                                 width: 70px;
                             }
+
+                            @include mq($desktopBP){
+                                width: 60px;       
+                            }
+
+                            @include mq($desktopWideBP){
+                                width: 70px;       
+                            }
                         }
     
                         .ratingPercent{
                             margin-left: 10px;
                             font-size: 1.7em;
                             padding-top: 2px;
+                            color: var(--sortTitles);
                         
                             @include mq($tabletBP){
                                 font-size: 2.5em;
                             }
 
                             @include mq($desktopBP){
-                                padding-top: 5px;
+                                padding-top: 11px;
+                                font-size: 2rem;
                             }
                             
                             @include mq($desktopWideBP){
                                 font-size: 2.5em;
-                                padding-top: 9px;
+                                padding-top: 7px;
                                 margin-left: 1rem;
                                 margin-bottom: 1rem;
                             }
                         }
                     }
 
+
                     .trailer {
                         @include mq($desktopBP){
-                            padding-top: 8px;
+                            padding-top: 0.8rem;
                             
                         }
 
@@ -136,8 +154,8 @@
                             white-space: nowrap;
                             font-size: 1em;
                             text-align: center;
-                            margin: 0 auto;
-                            margin-bottom: 3rem;
+                            margin: 1rem auto;
+                            margin-bottom: 2rem;
                             color: $primarytxtcolor;
                             border: 3px solid $accentcolor;
                             border-radius: 15px;
@@ -146,13 +164,14 @@
 
                             @include mq($tabletBP){
                                 font-size: 1.8em;
-                                margin-top: 3rem;
+                                margin-top: 2.5rem;
                                 margin-bottom: 4rem;
                             }
 
                             @include mq($desktopBP){
                                 font-size: 1.3em;
-                                margin-left: 3.5rem;
+                                margin-left: 1.5rem;
+
                                 margin-bottom: 3rem;
 
                                 transition: transform 0.3s ease-in;
@@ -166,11 +185,42 @@
 
                             @include mq($desktopWideBP){
                                 font-size: 1.8em;
-                                margin-left: 4rem;
+                                margin-left: 2.5rem;
+                            }
+                        } 
+                    }
+
+                    .btn-favourite-single {
+
+                        button {
+                            display: block;
+                            margin: 0 auto;
+                            margin-bottom: 1rem;
+
+                            @include mq($tabletBP){
+                                margin: 1rem auto;
+                            }
+
+                            img {
+                                width: 3.5rem;
+
+                                @include mq($tabletBP){
+                                    width: 5rem;
+                                }
+
+                                @include mq($desktopBP){
+                                    width: 3.2rem;
+                                    padding-top: 1.8rem;   
+                                    margin-left: 2rem;    
+                                }
+
+                                @include mq($desktopWideBP){
+                                    width: 4rem;
+                                    margin-left: 2.8rem;
+                                    padding-top: 1.6rem;
+                                }
                             }
                         }
-
-                        
                     }
                 }
                 
@@ -181,6 +231,7 @@
                     text-align: center;
                     text-decoration: underline 3px solid $accentcolor;
                     text-underline-offset: 7px;
+                    color: var(--sortTitles);
 
                     @include mq($tabletBP){
                         font-size: 2.2em;
@@ -190,7 +241,8 @@
                     @include mq($desktopBP){
                         font-size: 1.6em; 
                         text-underline-offset: 8px; 
-                        text-align: left;     
+                        text-align: left;  
+                        margin-top: 0;   
                     }
 
                     @include mq($desktopWideBP){
@@ -206,6 +258,7 @@
                     margin: 0 auto;
                     font-size: 1.1em;
                     margin-bottom: 1rem;
+                    color: var(--sortTitles);
 
                     @include mq($tabletBP){
                         font-size: 1.4em;
@@ -254,6 +307,7 @@
                             text-align: center;
                             text-decoration: underline 3px solid $accentcolor;
                             text-underline-offset: 5px;
+                            color: var(--sortTitles);
 
                             @include mq($tabletBP){
                                 font-size: 2.2em;
@@ -273,6 +327,7 @@
                         .date {
                             text-align: center;
                             font-size: 1.3em;
+                            color: var(--sortTitles);
 
                             @include mq($tabletBP){
                                 font-size: 2em;
@@ -295,6 +350,7 @@
                             text-align: center;
                             text-decoration: underline 3px solid $accentcolor;
                             text-underline-offset: 5px;
+                            color: var(--sortTitles);
 
                             @include mq($tabletBP){
                                 font-size: 2.2em;
@@ -314,6 +370,7 @@
                         .time {
                             text-align: center;
                             font-size: 1.3em;
+                            color: var(--sortTitles);
 
                             @include mq($tabletBP){
                                 font-size: 2em;
@@ -343,6 +400,7 @@
                         text-underline-offset: 7px;
                         margin-top: 3rem;
                         margin-bottom: 2rem;
+                        color: var(--sortTitles);
 
                         @include mq($tabletBP){
                             font-size: 2.2em;
@@ -412,6 +470,7 @@
                                 margin-bottom: 3rem;
                                 margin-top: 0.5rem;
                                 max-width: 80vw;
+                                color: var(--sortTitles);
 
                                 @include mq($tabletBP){
                                     max-width: 80%;
