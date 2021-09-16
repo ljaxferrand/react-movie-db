@@ -41,7 +41,7 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 110px;
-    width: 100vw;
+    width: 100%;
     transition: .1s ease-in-out;
     &:hover {
         background-color: var(--hoverBackground);
