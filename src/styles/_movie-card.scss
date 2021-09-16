@@ -1,4 +1,3 @@
-
 .slick-prev:before {
   content: "\1438
   ";
@@ -32,7 +31,6 @@
   a {
     color: var(--sortTitles);
     text-decoration: none;
-    
   }
 
   a:visited {
@@ -53,11 +51,6 @@
   h2 {
     text-align: center;
     padding-bottom: 2rem;
-  }
-
-  @include mq($tabletBP) {
-    position: absolute;
-    top: 8rem;
   }
 }
 
