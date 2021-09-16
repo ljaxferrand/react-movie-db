@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useEffect } from "react";
 import useGlobal from "../store/globalAppState";
 import FavButton from "./FavButton";
 import noPoster from "../images/no-movie-poster.jpg";
@@ -6,8 +8,17 @@ import thumbsUp from "../images/thumbs-up.svg";
 import thumbsDown from "../images/thumbs-down.svg";
 
 function MovieCard({ movieObj, isFav }) {
-  const globalStateAndglobalActions = useGlobal();
-  const globalActions = globalStateAndglobalActions[1];
+  // const globalStateAndglobalActions = useGlobal();
+  // const globalActions = globalStateAndglobalActions[1];
+
+  const [globalState, globalActions] = useGlobal();
+    const [ready, setReady] = useState(false);
+
+	useEffect(() => {
+        globalActions.setFavs();
+    
+            setReady(true);
+	}, [globalActions]);
 
   function handleFavClick(addToFav, obj) {
     console.log(addToFav)
