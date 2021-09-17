@@ -26,7 +26,7 @@ function credit() {
                     <a href="https://www.themoviedb.org/"><img class="imdb-logo" src={imdblogo} alt="Logo for IMDB" /></a>
                 </div>
                 <div className="item3">
-                    <a href="https://www.bcit.ca/programs/front-end-web-developer-certificate-full-time-6535cert/"><img class="bcit-logo" src={bcitLogo}/></a>
+                    <a href="https://www.bcit.ca/programs/front-end-web-developer-certificate-full-time-6535cert/"><img class="bcit-logo" src={bcitLogo} alt="logo for BCIT"/></a>
                 </div>
                 <div className="item4">
                     <p className="about-text">Enjoy browsing your favourite movies on this site. It was made possible by the contributions of the BCIT front-end web development program, its instructors, and of course, a team of dedicated developers.</p>

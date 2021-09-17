@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import '../styles/_searchMovies.scss';
-import * as IoIcons from 'react-icons/io';
+// import * as IoIcons from 'react-icons/io';
 import thumbsUp from "../images/thumbs-up.svg";
 
 
@@ -15,7 +15,7 @@ export default function SearchMoviesForm(props){
     const searchMovies = async(e) => {
         
         e.preventDefault();
-        // console.log("submitting");
+
 
         const url = `https://api.themoviedb.org/3/search/movie?api_key=b719fcd73bdca87defac06b5f5c92133&language=en-US&query=${query}&page=1`;
 
@@ -26,7 +26,6 @@ export default function SearchMoviesForm(props){
         // console.log(data.results);
         setMovies(data.results);
         }catch(err){
-        // console.log(err);
         }
     }
 

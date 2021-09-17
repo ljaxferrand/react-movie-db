@@ -1,8 +1,6 @@
 
 import MainNav from './MainNav';
 
-import Toggle from './Toggle';
-
 function Header() {
     
 
