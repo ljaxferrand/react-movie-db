@@ -13,7 +13,7 @@ export default function SearchMoviesForm(props){
     const [movies, setMovies] = useState([]);
 
     const searchMovies = async(e) => {
-
+        
         e.preventDefault();
         // console.log("submitting");
 
@@ -25,7 +25,7 @@ export default function SearchMoviesForm(props){
         //track movies that are displayed on the screen
         // console.log(data.results);
         setMovies(data.results);
-    }catch(err){
+        }catch(err){
         // console.log(err);
         }
     }
@@ -38,7 +38,7 @@ export default function SearchMoviesForm(props){
             <form className="form" onSubmit={searchMovies}>
                 <label className="label" htmlFor="query"></label>
                 <input className="input" type="search" name="query" placeholder="Type a name to search..."
-                value={query} onChange={(e) => setQuery(e.target.value)}/>
+                value={query} onChange={(e) => setQuery(e.target.value)} required/>
                 <button className="button">Search</button>
             </form>
             {/* { noMoviesMessage() } */}
