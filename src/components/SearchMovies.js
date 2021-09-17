@@ -6,7 +6,7 @@ function SearchMovies() {
         <div >
             
             <div className="container">
-                <h1 className="search-title"></h1>
+                <h1 className="search-title">Viewport Movie DB Search</h1>
                 <SearchMoviesForm />
             </div>
             <div className="background-styles"></div>
