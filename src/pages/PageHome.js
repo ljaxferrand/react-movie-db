@@ -1,5 +1,5 @@
 import HeroImage from "../components/HeroImage";
-import Footer from "../components/Footer";
+// import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import Slider1Popular from "../components/Slider1Popular";
 import Slider2NowPlaying from "../components/Slider2NowPlaying";
