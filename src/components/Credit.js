@@ -34,7 +34,7 @@ function credit() {
                     <ul className="bcitstudents-list">
                         <li><a href="https://chivitran.com">Chivi Tran</a></li>
                         <li>LJ MacLean-Ferrand</li>
-                        <li>Chris Coulson</li>
+                        <li><a href="https://coulson.codes">Chris Coulson</a></li>
                         <li>Nicole Holland</li>
                     </ul>
                 </div>
