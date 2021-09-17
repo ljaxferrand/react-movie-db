@@ -35,7 +35,7 @@ function credit() {
                         <li><a href="https://chivitran.com">Chivi Tran</a></li>
                         <li>LJ MacLean-Ferrand</li>
                         <li>Chris Coulson</li>
-                        <li>Nicole Holland</li>
+                        <li><a href="https://nicoleholland.ca/">Nicole Holland</a></li>
                     </ul>
                 </div>
                 </div>
