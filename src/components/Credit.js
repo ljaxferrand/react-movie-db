@@ -4,6 +4,7 @@ import bcitLogo from "../images/bcit-logo.png";
 import "../styles/_about.scss";
 
 function credit() {
+
   return (
     <div className="about-page-title">
       <div className="about-banner-container">
@@ -56,9 +57,10 @@ function credit() {
               <li>
                 <a href="https://coulson.codes">Chris Coulson</a>
               </li>
-              <li>Nicole Holland</li>
+              <li><a href="https://nicoleholland.ca/">Nicole Holland</a></li>
             </ul>
           </div>
+
         </div>
       </div>
     </div>
