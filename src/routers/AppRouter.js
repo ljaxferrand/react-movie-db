@@ -14,6 +14,7 @@ import PageSingleMovie from '../pages/PageSingleMovie';
 // import HeroImage from '../components/HeroImage';
 import Page404 from '../pages/Page404';
 import PageSearch from '../pages/PageSearch';
+import { APP_FOLDER_NAME } from '../globals/globals';
 
 function AppRouter() {
     useEffect(() => {
@@ -21,7 +22,7 @@ function AppRouter() {
     })
 
     return (
-        <Router>
+        <Router basename={APP_FOLDER_NAME}>
             
         <div className='wrapper'>
             <header>
