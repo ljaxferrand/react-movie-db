@@ -12,13 +12,15 @@
         .sliderText {
             z-index: 1000;
             position: absolute;
-            bottom: 18%;
+            bottom: 0%;
             left: 0;
             right: 0;
             text-align: center;
-
+            background: linear-gradient(to top, #293241 2%, #29324100) ;
+            padding: 25px;
+            padding-bottom: 125px;
             @include mq($tabletBP){
-                bottom: 18%;
+                bottom: 0%;
             }
 
             h2 {
@@ -27,18 +29,18 @@
                 font-size: 1.8rem;
                 letter-spacing: 1px;
                 max-width: 80vw;
-                margin: 1.5rem auto;
+                margin: 1rem auto;
                 text-transform: uppercase;
 
-                text-shadow:
-                0.03em 0 black,
-                0 0.03em black,
-                -0.03em 0 black,
-                0 -0.03em black,
-                -0.03em -0.03em black,
-                -0.03em 0.03em black,
-                0.03em -0.03em black,
-                0.03em 0.03em black;
+                // text-shadow:
+                // 0.03em 0 black,
+                // 0 0.03em black,
+                // -0.03em 0 black,
+                // 0 -0.03em black,
+                // -0.03em -0.03em black,
+                // -0.03em 0.03em black,
+                // 0.03em -0.03em black,
+                // 0.03em 0.03em black;
 
                 @include mq($tabletBP){
                     font-size: 2rem;
@@ -70,6 +72,7 @@
                 width: 200px;
                 font-size: 16px;
                 padding: 0.3rem 1rem;
+                
 
                 @include mq($tabletBP){
                     font-size: 22px;
@@ -105,9 +108,9 @@
                     var(--hoverBackground)
                 );
             width: 100%;
-            height: 101%;
+            height: 100%;
             z-index: 10;
-            opacity: 1;
+            opacity: 0;
             pointer-events: none;
         }
 
