@@ -1,7 +1,7 @@
 {
-  "name": "final-movie-db",
+  "name": "viewport-movie-db",
   "version": "0.1.0",
-  "homepage": "/viewport",
+  "homepage": "/viewport-movie-db",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
@@ -15,7 +15,7 @@
     "react-icons": "^4.2.0",
     "react-modal-video": "^1.2.8",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^5.0.0",
     "react-slick": "^0.28.1",
     "react-spring": "^9.2.4",
     "slick-carousel": "^1.8.1",
