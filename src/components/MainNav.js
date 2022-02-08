@@ -39,9 +39,9 @@ class Navbar extends React.Component {
                         // see mapped items in MenuItems.js for menu item naming, linking, and classname
                         
                         
-                        <li key={index}><a className={item.cName} href={item.url}>
-                            {item.title}
-                            </a>
+
+                        <li key={index}>
+                        <Link to={item.url} className={item.cName}>{item.title}</Link>
                         </li>
                         
                         
