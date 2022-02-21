@@ -54,7 +54,7 @@ Check out the live demo here:
 
 ### Key Takeaways
 
-React is a fast and powerful library that makes it simple to integrate data pulled from an API. Rendering components via JSX with dynamic data, handling interactions, and state changes can be a lot more efficient than doing so with HTML and vanilla JS.  While we styled this project using SCSS, I would try something like CSS-in-JS in the future.
+React is a fast and powerful library that makes it simple to integrate data pulled from an API. Rendering components via JSX with dynamic data, and handling interactions and state changes can be a lot more efficient than doing so with HTML and vanilla JS.  While we styled this project using SCSS, I would try something like CSS-in-JS in the future.
 
 ### Roadmap
 If I were to continue iterating on this project, I would add some of the following features/optimizations based on feedback received during testing: 
