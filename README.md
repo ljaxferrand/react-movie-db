@@ -9,7 +9,6 @@
 	* [Demo](#demo)
 	* [Tools Used](#tools-used)
 	* [Features](#features)
-* [Setup](#setup)
 * [Summary](#summary)
 	* [Key Takeaways](#key-takeaways)
 	* [Roadmap](#roadmap)
@@ -40,14 +39,6 @@ Check out the live demo here:
 -	Favourites list management via `use-global-hook`
 -	Light/dark mode user preference state via local storage
 	
-<p  align="right">(<a  href="#top">back to top</a>)</p>
-
-## Setup
-
-1. Run `npm install` to install needed dependencies after you've cloned this repo and entered its root directory.
-2. Run `npm start` to start the application.
-3. Open [http://localhost:3000](http://localhost:3000/) to view it in the browser.
-
 <p  align="right">(<a  href="#top">back to top</a>)</p>
 
 ## Summary
